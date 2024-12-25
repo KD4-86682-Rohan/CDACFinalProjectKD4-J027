@@ -5,7 +5,7 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
             <div className="container">
-                <Link className="navbar-brand fw-bold fs-4" to="/" style={{ color: "blue" }}>
+                <Link className="navbar-brand fw-bold fs-4" to="/home" style={{ color: "blue" }}>
                     QuickPark
                 </Link>
                 <button
