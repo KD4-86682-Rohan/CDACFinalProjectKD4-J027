@@ -1,0 +1,33 @@
+/* Navbar brand styling */
+.brand-name {
+    color: blue;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  
+  /* Profile icon styling */
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Adjust spacing for navbar links */
+  .navbar-nav .nav-item {
+    margin-right: 15px;
+  }
+  
+  /* Active link styling */
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: blue !important;
+  }
+  
+  /* Dropdown menu styling */
+  .dropdown-menu {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
