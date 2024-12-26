@@ -6,6 +6,8 @@ import Register from './Screens/Register';
 import UserHome from './Screens/UserHome';
 import Home from './Screens/Home';
 import Booking from './Screens/Booking';
+import VendorDashboard from './Screens/VendorHome';
+import ManageSpaces from './Screens/ManageSpaces';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/userHome" element={<UserHome/>}/>
         <Route path='/' element={<Home/>} />
         <Route path='/booking' element={<Booking/>} />
+        <Route path='/vendorhome' element={<VendorDashboard/>} />
+        <Route path='/managespaces' element={<ManageSpaces/>} />
       </Routes>
       <ToastContainer />
     </div>
