@@ -4,6 +4,7 @@ import Login from './Screens/Login';
 import AboutUs from './Screens/AboutUs';
 import Register from './Screens/Register';
 import UserHome from './Screens/UserHome';
+import ContactUs from './Screens/ContactUs';
 import Home from './Screens/Home';
 import Booking from './Screens/Booking';
 import VendorDashboard from './Screens/VendorHome';
@@ -21,6 +22,8 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/register" element={<Register />} />
         <Route path="/userHome" element={<UserHome/>}/>
+        <Route path="/contact-us" element={<ContactUs/>}/>
+        <Route path="/about-us" element={<AboutUs/>}/>
         <Route path='/' element={<Home/>} />
 
         <Route path='/booking' element={<Booking/>} />
@@ -29,7 +32,6 @@ function App() {
 
         <Route path='/availableparking' element={<ParkingList />} />
         <Route path='/mybookings' element={<MyBookings />} />
-
       </Routes>
       <ToastContainer />
     </div>
