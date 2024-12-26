@@ -1,0 +1,78 @@
+VendorDashboard.css
+.dashboard-container {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+}
+.dashboard-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.dashboard-nav li {
+  cursor: pointer;
+}
+.logout {
+  color: red;
+}
+.welcome-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+.dashboard-cards {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 30%;
+}
+.card button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.statistics-section {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin: 20px 0;
+}
+.stat {
+  text-align: center;
+}
+.dashboard-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #343a40;
+  color: white;
+}
+.dashboard-footer h4 {
+  margin-bottom: 10px;
+}
+.dashboard-footer ul {
+  list-style: none;
+  padding: 0;
+}
+.dashboard-footer ul li {
+  margin-bottom: 5px;
+}
