@@ -1,0 +1,62 @@
+ManageSpaces.css
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.add-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.parking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.parking-table th, .parking-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.parking-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.status.active {
+  background-color: #28a745;
+}
+
+.edit-btn, .delete-btn {
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.edit-btn {
+  color: #007bff;
+}
+
+.delete-btn {
+  color: #dc3545;
+}
