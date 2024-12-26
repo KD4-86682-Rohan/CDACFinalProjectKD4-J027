@@ -8,6 +8,8 @@ import Home from './Screens/Home';
 import Booking from './Screens/Booking';
 import VendorDashboard from './Screens/VendorHome';
 import ManageSpaces from './Screens/ManageSpaces';
+import ParkingList from './Screens/AvailableParking';
+import MyBookings from './Screens/MyBokking'
 
 
 function App() {
@@ -20,9 +22,14 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/userHome" element={<UserHome/>}/>
         <Route path='/' element={<Home/>} />
+
         <Route path='/booking' element={<Booking/>} />
         <Route path='/vendorhome' element={<VendorDashboard/>} />
         <Route path='/managespaces' element={<ManageSpaces/>} />
+
+        <Route path='/availableparking' element={<ParkingList />} />
+        <Route path='/mybookings' element={<MyBookings />} />
+
       </Routes>
       <ToastContainer />
     </div>
