@@ -73,7 +73,7 @@ function MyBookings() {
               <div className="card-body">
                 <h5 className="card-title">{booking.location}</h5>
                 <p className="card-text">
-                  <span className="badge bg-success me-2">
+                  <span className="badge bg-success me-">
                     {booking.status === "active" && "Active"}
                   </span>
                   <span className="badge bg-primary me-2">

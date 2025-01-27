@@ -109,7 +109,7 @@ function Register() {
               Already have an account? <Link to="/login">Signin here</Link>
             </div>
             <button className="mt-3 btn btn-success">
-              Signup
+              <Link className="nav-link" to='/vendorhome'>Signup</Link> 
             </button>
           </div>
         </div>

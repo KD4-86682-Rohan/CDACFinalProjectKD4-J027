@@ -89,7 +89,7 @@ function UserNavbar() {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/logout">
+                  <Link className="dropdown-item" to="/">
                     Logout
                   </Link>
                 </li>

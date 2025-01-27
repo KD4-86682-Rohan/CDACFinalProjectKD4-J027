@@ -31,7 +31,7 @@ function Login() {
               Don't have an account? <Link to='/register'>Register here</Link>
             </div>
             <button className='btn btn-success mt-3'>
-              <Link to='/userHome'>Login</Link>
+              <Link className="nav-link" to='/userHome'>Login</Link>
             </button>
           </div>
         </div>

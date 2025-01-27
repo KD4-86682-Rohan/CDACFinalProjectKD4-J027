@@ -1,5 +1,7 @@
 import React from "react";
 import "../CSS/ManageSpaces.css"; // Add CSS for styling
+import Footer from "../Components/Footer";
+import AdminNavbar from "../Components/AdminNavbar";
 
 const ManageSpaces = () => {
   const parkingSpaces = [
@@ -22,6 +24,8 @@ const ManageSpaces = () => {
   ];
 
   return (
+    <div>
+      <AdminNavbar />
     <div className="container">
       <h1>Manage Parking Spaces</h1>
       <button className="add-btn">+ Add New Space</button>
@@ -58,6 +62,8 @@ const ManageSpaces = () => {
           ))}
         </tbody>
       </table>
+    </div>
+    <Footer />
     </div>
   );
 };
