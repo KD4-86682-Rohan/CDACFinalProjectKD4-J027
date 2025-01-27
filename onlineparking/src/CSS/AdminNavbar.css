@@ -1,0 +1,35 @@
+/* General navbar styles */
+.navbar {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Brand styling */
+  .navbar-brand {
+    color: #ffffff !important;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+  
+  /* Navbar links */
+  .nav-link {
+    color: #ffffff !important;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #1abc9c !important; /* Add a hover effect */
+  }
+  
+  /* Logout button */
+  .btn-danger {
+    background-color: #e74c3c !important;
+    border-color: #e74c3c !important;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c0392b !important;
+  }
+  

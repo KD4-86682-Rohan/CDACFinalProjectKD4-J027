@@ -6,7 +6,7 @@ function Login() {
     return ( 
         <div>
           <Navbar />
-        {/* <h2 classNameName='header'>Login</h2> */}
+        {/* <h2 className='header'>Login</h2> */}
         <div className='row'>
         <div className='col'></div>
         <div className='col'>

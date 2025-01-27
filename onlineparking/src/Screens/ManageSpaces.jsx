@@ -1,6 +1,8 @@
 import React from "react";
 import "../CSS/ManageSpaces.css"; // Add CSS for styling
 
+
+
 const ManageSpaces = () => {
   const parkingSpaces = [
     {
@@ -23,7 +25,9 @@ const ManageSpaces = () => {
 
   return (
     <div className="container">
+      
       <h1>Manage Parking Spaces</h1>
+      {/* <AdminNavbar/> */}
       <button className="add-btn">+ Add New Space</button>
       <table className="parking-table">
         <thead>

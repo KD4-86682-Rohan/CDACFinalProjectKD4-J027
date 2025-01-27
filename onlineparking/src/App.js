@@ -6,7 +6,6 @@ import Register from './Screens/Register';
 import UserHome from './Screens/UserHome';
 import ContactUs from './Screens/ContactUs';
 import Home from './Screens/Home';
-import Booking from './Screens/Booking';
 import VendorDashboard from './Screens/VendorHome';
 import ManageSpaces from './Screens/ManageSpaces';
 import ParkingList from './Screens/AvailableParking';
@@ -25,8 +24,6 @@ function App() {
         <Route path="/contact-us" element={<ContactUs/>}/>
         <Route path="/about-us" element={<AboutUs/>}/>
         <Route path='/' element={<Home/>} />
-
-        <Route path='/booking' element={<Booking/>} />
         <Route path='/vendorhome' element={<VendorDashboard/>} />
         <Route path='/managespaces' element={<ManageSpaces/>} />
 
