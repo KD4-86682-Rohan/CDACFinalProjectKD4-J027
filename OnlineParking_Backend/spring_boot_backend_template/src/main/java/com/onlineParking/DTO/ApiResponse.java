@@ -6,9 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
+
 @Getter
 @Setter
+@NoArgsConstructor
 public class ApiResponse {
 	private String message;
 	private LocalDateTime timeStamp;
@@ -17,5 +18,5 @@ public class ApiResponse {
 		this.message = message;
 		this.timeStamp=LocalDateTime.now();
 	}
-	
+
 }

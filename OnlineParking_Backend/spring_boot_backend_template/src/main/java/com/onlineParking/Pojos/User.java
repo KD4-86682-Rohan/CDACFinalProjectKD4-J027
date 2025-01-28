@@ -2,6 +2,7 @@ package com.onlineParking.Pojos;
 
 import java.sql.Date;
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,4 +33,5 @@ public class User extends BaseEntity{
 	private Role role;
 	@Column(name="license_number", length = 20)
 	private String LicenseNumber;
+	
 }
