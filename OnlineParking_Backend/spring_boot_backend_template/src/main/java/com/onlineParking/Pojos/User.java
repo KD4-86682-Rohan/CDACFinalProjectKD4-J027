@@ -15,17 +15,21 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class User extends BaseEntity{
-	@Column(name="first_name")
+	@Column(name="first_name", length = 50)
 	private String firstName;
-	@Column(name="last_name")
+	@Column(name="last_name", length = 50)
 	private String lastName;
+	@Column(length = 100)
 	private String email;
+	@Column(length = 50)
 	private String password;
-	@Column(name="phone_number")
+	@Column(name="phone_number",length = 10)
 	private String phone;
-	private Gender gendre;
+	@Enumerated(EnumType.STRING)
+	private Gender gender;
 	private Date dob;
+	@Enumerated(EnumType.STRING)
 	private Role role;
-	@Column(name="license_number")
+	@Column(name="license_number", length = 20)
 	private String LicenseNumber;
 }

@@ -16,7 +16,7 @@ public class UserReqDto {
 	private String email;
 	private String password;
 	private String phone;
-	private Gender gendre;
+	private Gender gender;
 	private Date dob;
 	private Role role;
 	private String LicenseNumber;
