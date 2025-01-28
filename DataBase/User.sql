@@ -23,7 +23,8 @@ VALUES
 ('Jane', 'Smith', 'jane.smith@example.com', 'securepass456', '9876543210', 'Female', '1985-07-20', 'Admin', 'DEF7654321'),
 ('Alex', 'Taylor', 'alex.taylor@example.com', 'mypassword789', '1122334455', 'Other', '2000-12-05', 'Vendor', 'GHI9876543'),
 ('Chris', 'Brown', 'chris.brown@example.com', 'pass123456', '2233445566', 'Male', '1995-09-30', 'User', 'JKL6543219'),
-('Emily', 'Clark', 'emily.clark@example.com', 'emilypass321', '3344556677', 'Female', '1992-03-10', 'Vendor', 'MNO1239876');
+('Emily', 'Clark', 'emily.clark@example.com', 'emilypass321', '3344556677', 'Female', '1992-03-10', 'Vendor', 'MNO1239876')
+('Emily', 'Clark', 'emily.clark@example.com', 'emilypass321', '3344556677', 'Female', '1992-03-10', 'Vendor', 'MNO1239876')
 
 CREATE TABLE Parking_Locations (
     location_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -174,4 +175,8 @@ CREATE TABLE Audit_Log (
 
 INSERT INTO Audit_Log (admin_id, action, description)
 VALUES
+
 (2, 'Update Revenue', 'Updated revenue for location ID 1.');
+(2, 'Update Revenue', 'Updated revenue for location ID 1.');
+
+

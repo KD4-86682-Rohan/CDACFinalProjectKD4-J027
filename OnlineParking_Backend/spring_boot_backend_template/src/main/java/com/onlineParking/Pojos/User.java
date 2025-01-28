@@ -1,6 +1,8 @@
 package com.onlineParking.Pojos;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -28,4 +30,5 @@ public class User extends BaseEntity{
 	private Role role;
 	@Column(name="license_number")
 	private String LicenseNumber;
+	
 }
