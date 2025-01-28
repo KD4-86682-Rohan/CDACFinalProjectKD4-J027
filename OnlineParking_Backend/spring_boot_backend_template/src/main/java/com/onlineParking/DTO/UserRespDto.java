@@ -19,7 +19,7 @@ public class UserRespDto {
 	private String lastName;
 	private String email;
 	private String phone;
-	private Gender gendre;
+	private Gender gender;
 	private Date dob;
 	private Role role;
 	private String LicenseNumber;
