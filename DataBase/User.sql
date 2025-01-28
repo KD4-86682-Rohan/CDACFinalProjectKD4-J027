@@ -25,31 +25,6 @@ VALUES
 ('Chris', 'Brown', 'chris.brown@example.com', 'pass123456', '2233445566', 'Male', '1995-09-30', 'User', 'JKL6543219'),
 ('Emily', 'Clark', 'emily.clark@example.com', 'emilypass321', '3344556677', 'Female', '1992-03-10', 'Vendor', 'MNO1239876');
 
--- Table Parking_Location
-CREATE TABLE Parking_Locations (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    city VARCHAR(50) NOT NULL,
-    area VARCHAR(100) NOT NULL,
-    vendor_id INT,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (vendor_id) REFERENCES Users(id)
-);
-
-
-INSERT INTO Parking_Locations (city, area, vendor_id)
-VALUES
-('Pune', 'Hinjewadi IT Park', 3),    -- Vendor: Alex Taylor
-('Pune', 'Baner Road', 5),           -- Vendor: Emily Clark
-('Pune', 'Viman Nagar', 3),          -- Vendor: Alex Taylor
-('Pune', 'Koregaon Park', 5),        -- Vendor: Emily Clark
-('Pune', 'Magarpatta City', 3),      -- Vendor: Alex Taylor
-('Pune', 'Kothrud', 5),              -- Vendor: Emily Clark
-('Pune', 'Shivajinagar', 3),         -- Vendor: Alex Taylor
-('Pune', 'Pimple Saudagar', 5),      -- Vendor: Emily Clark
-('Pune', 'Wakad', 3),                -- Vendor: Alex Taylor
-('Pune', 'Camp Area', 5);            -- Vendor: Emily Clark
-
 
 
 
