@@ -17,6 +17,7 @@ import com.onlineParking.Services.ParkingLocationService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -40,10 +41,10 @@ public class ParkingLocationController {
 		return ResponseEntity.ok(locations);
 	}
 	
-	@PostMapping
-	public ResponseEntity<?> addNewParkingLocation(@RequestBody ParkingLocationReqDto location) {
+	@PostMapping("/{vendor_id}")
+	public ResponseEntity<?> addNewParkingLocation(@PathVariable Long vendor_id,@RequestBody ParkingLocationReqDto location) {
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(parkingLocationService.addNewParkingLocation(location));
+				.body(parkingLocationService.addNewParkingLocation(location, vendor_id));
 	}
 	
 	

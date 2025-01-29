@@ -9,5 +9,5 @@ import com.onlineParking.DTO.ParkingLocationRespDto;
 public interface ParkingLocationService {
 	List<ParkingLocationRespDto> getAllParkingLocations();
 	
-	ApiResponse addNewParkingLocation(ParkingLocationReqDto dto);
+	ApiResponse addNewParkingLocation(ParkingLocationReqDto dto, Long vendorId);
 }
