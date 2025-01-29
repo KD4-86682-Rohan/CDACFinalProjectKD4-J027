@@ -1,119 +1,266 @@
+// import Footer from "../Components/Footer";
+// import Navbar from "../Components/Navbar";
+// import { Link } from "react-router-dom";
+
+// function Register() {
+//   return (
+//     <div>
+//       <Navbar />
+//       <h2 className="header">Register</h2>
+//       <div className="row">
+//         <div className="col"></div>
+//         <div className="col">
+//           {/* First Name */}
+//           <div className="mb-3">
+//             <label htmlFor="firstName">First Name</label>
+//             <input
+//               type="text"
+//               id="firstName"
+//               className="form-control"
+//             />
+//           </div>
+//           {/* Last Name */}
+//           <div className="mb-3">
+//             <label htmlFor="lastName">Last Name</label>
+//             <input
+//               type="text"
+//               id="lastName"
+//               className="form-control"
+//             />
+//           </div>
+//           {/* Email */}
+//           <div className="mb-3">
+//             <label htmlFor="email">Email</label>
+//             <input
+//               type="email"
+//               id="email"
+//               className="form-control"
+//             />
+//           </div>
+//           {/* Phone Number */}
+//           <div className="mb-3">
+//             <label htmlFor="phoneNumber">Phone Number</label>
+//             <input
+//               type="tel"
+//               id="phoneNumber"
+//               className="form-control"
+//             />
+//           </div>
+//           {/* Gender */}
+//           <div className="mb-3">
+//             <label>Gender</label>
+//             <div>
+//               <input type="radio" id="male" name="gender" value="male" />
+//               <label htmlFor="male" className="me-2">Male</label>
+//               <input type="radio" id="female" name="gender" value="female" />
+//               <label htmlFor="female" className="me-2">Female</label>
+//               <input type="radio" id="other" name="gender" value="other" />
+//               <label htmlFor="other">Other</label>
+//             </div>
+//           </div>
+//           {/* Date of Birth */}
+//           <div className="mb-3">
+//             <label htmlFor="dob">Date of Birth</label>
+//             <input
+//               type="date"
+//               id="dob"
+//               className="form-control"
+//             />
+//           </div>
+//           {/* Driving License */}
+//           <div className="mb-3">
+//             <label htmlFor="drivingLicense">Driving License</label>
+//             <input
+//               type="text"
+//               id="drivingLicense"
+//               className="form-control"
+//             />
+//           </div>
+//           {/* Select Role */}
+//           <div className="mb-3">
+//             <label htmlFor="role">Select Role</label>
+//             <select id="role" className="form-control">
+//               <option value="admin">Admin</option>
+//               <option value="parkingVendor">Parking Vendor</option>
+//               <option value="user">User</option>
+//             </select>
+//           </div>
+//           {/* Password */}
+//           <div className="mb-3">
+//             <label htmlFor="password">Password</label>
+//             <input
+//               type="password"
+//               id="password"
+//               className="form-control"
+//             />
+//           </div>
+//           {/* Confirm Password */}
+//           <div className="mb-3">
+//             <label htmlFor="confirmPassword">Confirm Password</label>
+//             <input
+//               type="password"
+//               id="confirmPassword"
+//               className="form-control"
+//             />
+//           </div>
+//           {/* Signup Button */}
+//           <div className="mb-3">
+//             <div>
+//               Already have an account? <Link to="/login">Signin here</Link>
+//             </div>
+//             <button className="mt-3 btn btn-success">
+//               <Link className="nav-link" to='/vendorhome'>Signup</Link> 
+//             </button>
+//           </div>
+//         </div>
+//         <div className="col"></div>
+//       </div>
+//       <Footer />
+//     </div>
+//   );
+// }
+
+// export default Register;
+
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import { Link } from "react-router-dom";
+import "../CSS/Register.css";
 
 function Register() {
+  
   return (
     <div>
       <Navbar />
-      <h2 className="header">Register</h2>
-      <div className="row">
-        <div className="col"></div>
-        <div className="col">
-          {/* First Name */}
-          <div className="mb-3">
-            <label htmlFor="firstName">First Name</label>
-            <input
-              type="text"
-              id="firstName"
-              className="form-control"
-            />
-          </div>
-          {/* Last Name */}
-          <div className="mb-3">
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              type="text"
-              id="lastName"
-              className="form-control"
-            />
-          </div>
-          {/* Email */}
-          <div className="mb-3">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              className="form-control"
-            />
-          </div>
-          {/* Phone Number */}
-          <div className="mb-3">
-            <label htmlFor="phoneNumber">Phone Number</label>
-            <input
-              type="tel"
-              id="phoneNumber"
-              className="form-control"
-            />
-          </div>
-          {/* Gender */}
-          <div className="mb-3">
-            <label>Gender</label>
-            <div>
-              <input type="radio" id="male" name="gender" value="male" />
-              <label htmlFor="male" className="me-2">Male</label>
-              <input type="radio" id="female" name="gender" value="female" />
-              <label htmlFor="female" className="me-2">Female</label>
-              <input type="radio" id="other" name="gender" value="other" />
-              <label htmlFor="other">Other</label>
+      <div className="registration-container">
+        <div className="registration-content">
+          <h2>Create an Account</h2>
+          <p>Fill in the details below to register for the online parking system.</p>
+
+          <form>
+            {/* First Name */}
+            <div className="input-group">
+              <label htmlFor="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Enter your first name"
+                required
+              />
             </div>
-          </div>
-          {/* Date of Birth */}
-          <div className="mb-3">
-            <label htmlFor="dob">Date of Birth</label>
-            <input
-              type="date"
-              id="dob"
-              className="form-control"
-            />
-          </div>
-          {/* Driving License */}
-          <div className="mb-3">
-            <label htmlFor="drivingLicense">Driving License</label>
-            <input
-              type="text"
-              id="drivingLicense"
-              className="form-control"
-            />
-          </div>
-          {/* Select Role */}
-          <div className="mb-3">
-            <label htmlFor="role">Select Role</label>
-            <select id="role" className="form-control">
-              <option value="admin">Admin</option>
-              <option value="parkingVendor">Parking Vendor</option>
-              <option value="user">User</option>
-            </select>
-          </div>
-          {/* Password */}
-          <div className="mb-3">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              className="form-control"
-            />
-          </div>
-          {/* Confirm Password */}
-          <div className="mb-3">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              className="form-control"
-            />
-          </div>
-          {/* Signup Button */}
-          <div className="mb-3">
-            <div>
-              Already have an account? <Link to="/login">Signin here</Link>
+
+            {/* Last Name */}
+            <div className="input-group">
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Enter your last name"
+                required
+              />
             </div>
-            <button className="mt-3 btn btn-success">
-              <Link className="nav-link" to='/vendorhome'>Signup</Link> 
+
+            {/* Email */}
+            <div className="input-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            {/* Phone Number */}
+            <div className="input-group">
+              <label htmlFor="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+
+            {/* Gender */}
+            <div className="input-group">
+              <label htmlFor="gender">Gender</label>
+              <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            {/* Date of Birth */}
+            <div className="input-group">
+              <label htmlFor="dob">Date of Birth</label>
+              <input type="date" id="dob" name="dob" required />
+            </div>
+
+            {/* License Number */}
+            <div className="input-group">
+              <label htmlFor="licenseNumber">License Number</label>
+              <input
+                type="text"
+                id="licenseNumber"
+                name="licenseNumber"
+                placeholder="Enter your license number"
+                required
+              />
+            </div>
+
+            {/* Role */}
+            <div className="input-group">
+              <label htmlFor="role">Role</label>
+              <select id="role" name="role" required>
+                <option value="">Select Role</option>
+                <option value="Admin">Admin</option>
+                <option value="Parking Vendor">Parking Vendor</option>
+                <option value="User">User</option>
+              </select>
+            </div>
+
+            {/* Password */}
+            <div className="input-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            {/* Confirm Password */}
+            <div className="input-group">
+              <label htmlFor="confirmPassword">Confirm Password</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                required
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button type="submit" className="btn submit-btn">
+              Register
             </button>
+          </form>
+
+          {/* Link to Login for existing users */}
+          <div className="existing-user">
+            <p>Already have an account? <Link to="/login">Login here</Link></p>
           </div>
         </div>
-        <div className="col"></div>
       </div>
       <Footer />
     </div>

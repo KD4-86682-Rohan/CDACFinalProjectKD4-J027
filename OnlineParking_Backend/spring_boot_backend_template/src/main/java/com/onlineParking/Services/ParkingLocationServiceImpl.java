@@ -11,7 +11,9 @@ import com.onlineParking.DTO.ApiResponse;
 import com.onlineParking.DTO.ParkingLocationReqDto;
 import com.onlineParking.DTO.ParkingLocationRespDto;
 import com.onlineParking.Dao.ParkingLocationDao;
+import com.onlineParking.Dao.UserDao;
 import com.onlineParking.Pojos.ParkingLocation;
+import com.onlineParking.Pojos.User;
 
 import jakarta.transaction.Transactional;
 
@@ -21,6 +23,8 @@ public class ParkingLocationServiceImpl implements ParkingLocationService {
 	
 	@Autowired
 	private ParkingLocationDao parkingLocationDao;
+	@Autowired
+	private UserDao userDao;
 	
 	@Autowired
 	private ModelMapper modelMapper;
@@ -37,12 +41,16 @@ public class ParkingLocationServiceImpl implements ParkingLocationService {
 
 	//add new parking location
 	@Override
-	public ApiResponse addNewParkingLocation(ParkingLocationReqDto dto) {
-		
-		ParkingLocation location = modelMapper.map(dto,ParkingLocation.class);
-		ParkingLocation persistentLocation = parkingLocationDao.save(location);
-		return new ApiResponse("Added new category with ID="
-				+ persistentLocation.getId());
+	public ApiResponse addNewParkingLocation(ParkingLocationReqDto dto,Long vendorId) {
+		User user=userDao.findById(vendorId).orElseThrow(()->new RuntimeException("Invalid Id"));
+//		if(user.getRole().equals(Role.Admin)) {
+			ParkingLocation location = modelMapper.map(dto,ParkingLocation.class);
+			location.setVendor(user);
+			ParkingLocation persistentLocation = parkingLocationDao.save(location);
+			return new ApiResponse("new parking location added with id="
+					+ persistentLocation.getId());
+//		}
+//		return new ApiResponse("location not added");
 		
 	}
 	
