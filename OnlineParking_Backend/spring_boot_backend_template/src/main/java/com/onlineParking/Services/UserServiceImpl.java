@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 				.orElseThrow(()->
 				new ApiException("Invallid Email or Password"));
 		
-		return modelMapper.map(user, UserRespDto.class);
+		return modelMapper.map(u, UserRespDto.class);
 	}
 
 }

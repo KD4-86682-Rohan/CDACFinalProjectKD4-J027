@@ -174,6 +174,8 @@ CREATE TABLE Audit_Log (
 
 INSERT INTO Audit_Log (admin_id, action, description)
 VALUES
+
+(2, 'Update Revenue', 'Updated revenue for location ID 1.');
 (2, 'Update Revenue', 'Updated revenue for location ID 1.');
 
 
