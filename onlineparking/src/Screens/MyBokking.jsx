@@ -1,12 +1,15 @@
+
 import React from "react";
 import Footer from "../Components/Footer";
 import UserNavbar from "../Components/UserNavbar";
+// import "../CSS/MyBooking.css"; // Import the CSS file for styling
+import "../CSS/MyBooking.css";
 
 function MyBookings() {
   const bookings = [
     {
       id: 1,
-      image: "https://via.placeholder.com/300", // Replace with actual image URL
+      image: "https://img.freepik.com/free-photo/full-car-parking-lot-mall_1268-14318.jpg?t=st=1738213604~exp=1738217204~hmac=9928cc74a76e2e0f3ac97d1211ae0d1dbdff8194fbaab58e34450c4d0d093c78&w=996",
       location: "Downtown Parking Complex",
       status: "active",
       date: "2024-01-15",
@@ -16,7 +19,7 @@ function MyBookings() {
     },
     {
       id: 2,
-      image: "https://via.placeholder.com/300", // Replace with actual image URL
+      image: "https://img.freepik.com/free-photo/horizontal-picture-car-parking-underground-garage-interior-with-neon-lights-autocars-parked-buildings-urban-constructions-space-transportation-vehicle-night-city-concept_343059-3077.jpg?t=st=1738213711~exp=1738217311~hmac=a4549ea1385cd630701627135ac3d7c5f8ae947210cb5bbe2399d5a1e1208a82&w=996", // Replace with actual image URL
       location: "Central Mall Parking",
       status: "upcoming",
       date: "2024-01-18",
@@ -26,7 +29,7 @@ function MyBookings() {
     },
     {
       id: 3,
-      image: "https://via.placeholder.com/300", // Replace with actual image URL
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_mv2s15FHe9UIouR68MC3Lcrw_wZT1I7sXA", // Replace with actual image URL
       location: "Airport Terminal Parking",
       status: "completed",
       date: "2024-01-10",
@@ -38,74 +41,74 @@ function MyBookings() {
 
   return (
     <div>
-        <UserNavbar />
-    <div className="container my-4">
-      {/* Navbar */}
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <h1>My Bookings</h1>
-        <div>
-          <input
-            type="text"
-            className="form-control me-2"
-            placeholder="Search bookings..."
-            style={{ display: "inline-block", width: "300px" }}
-          />
-          <select className="form-select" style={{ width: "150px", display: "inline-block" }}>
-            <option value="all">All Bookings</option>
-            <option value="active">Active</option>
-            <option value="upcoming">Upcoming</option>
-            <option value="completed">Completed</option>
-          </select>
+      <UserNavbar />
+      <div className="container my-4">
+        {/* Navbar */}
+        <div className="d-flex justify-content-between align-items-center mb-3">
+          <h1 className="text-center">My Bookings</h1>
+          <div>
+            <input
+              type="text"
+              className="form-control me-2"
+              placeholder="Search bookings..."
+              style={{ display: "inline-block", width: "300px" }}
+            />
+            <select className="form-select" style={{ width: "150px", display: "inline-block" }}>
+              <option value="all">All Bookings</option>
+              <option value="active">Active</option>
+              <option value="upcoming">Upcoming</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      {/* Booking Cards */}
-      <div className="row">
-        {bookings.map((booking) => (
-          <div className="col-md-4 mb-3" key={booking.id}>
-            <div className="card shadow-sm">
-              <img
-                src={booking.image}
-                alt={booking.location}
-                className="card-img-top"
-                style={{ height: "150px", objectFit: "cover" }}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{booking.location}</h5>
-                <p className="card-text">
-                  <span className="badge bg-success me-">
-                    {booking.status === "active" && "Active"}
-                  </span>
-                  <span className="badge bg-primary me-2">
-                    {booking.status === "upcoming" && "Upcoming"}
-                  </span>
-                  <span className="badge bg-secondary me-2">
-                    {booking.status === "completed" && "Completed"}
-                  </span>
-                </p>
-                <p className="card-text">
-                  <i className="bi bi-calendar"></i> {booking.date}
-                </p>
-                <p className="card-text">
-                  <i className="bi bi-clock"></i> {booking.time}
-                </p>
-                <p className="card-text">
-                  <i className="bi bi-geo-alt"></i> {booking.spot}
-                </p>
-                <p className="card-text text-primary fw-bold">{booking.cost}</p>
-                <div className="d-flex justify-content-between">
-                  <button className="btn btn-primary btn-sm">Extend</button>
-                  <button className="btn btn-danger btn-sm">Cancel</button>
+        {/* Booking Cards */}
+        <div className="row d-flex justify-content-center">
+          {bookings.map((booking) => (
+            <div className="col-lg-3 col-md-6 col-sm-12 mb-4" key={booking.id}>
+              <div className="card shadow-sm">
+                <img
+                  src={booking.image}
+                  alt={booking.location}
+                  className="card-img-top"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{booking.location}</h5>
+                  <p className="card-text">
+                    <span className={`badge bg-${booking.status}`}>
+                      {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
+                    </span>
+                  </p>
+                  <p className="card-text">
+                    <i className="bi bi-calendar"></i> {booking.date}
+                  </p>
+                  <p className="card-text">
+                    <i className="bi bi-clock"></i> {booking.time}
+                  </p>
+                  <p className="card-text">
+                    <i className="bi bi-geo-alt"></i> {booking.spot}
+                  </p>
+                  <p className="card-text text-primary fw-bold">{booking.cost}</p>
+
+                  {booking.status === "completed" ? (
+                      <button className="btn btn-warning btn-sm w-100">Rate Us</button>
+                    ) : (
+                      <div className="d-flex justify-content-between">
+                        <button className="btn btn-primary btn-sm">Extend</button>
+                        <button className="btn btn-danger btn-sm">Cancel</button>
+                      </div>
+                    )}
+
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </div>
   );
 }
 
 export default MyBookings;
+
