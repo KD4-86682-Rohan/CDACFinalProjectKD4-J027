@@ -10,6 +10,7 @@ import VendorDashboard from './Screens/VendorHome';
 import ManageSpaces from './Screens/ManageSpaces';
 import ParkingList from './Screens/AvailableParking';
 import MyBookings from './Screens/MyBokking'
+import Profile from './Screens/Profile';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
 
         <Route path='/availableparking' element={<ParkingList />} />
         <Route path='/mybookings' element={<MyBookings />} />
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
       <ToastContainer />
     </div>

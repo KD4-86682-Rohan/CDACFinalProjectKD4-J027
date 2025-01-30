@@ -26,7 +26,7 @@ function AboutUs() {
                 className="img-fluid rounded"
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <h2 className="section-title">Who We Are</h2>
               <p className="section-text">
                 QuickPark is an innovative platform dedicated to making parking
@@ -60,7 +60,7 @@ function AboutUs() {
         <div className="container">
           <h2 className="section-title text-center">Meet Our Team</h2>
           <div className="row">
-            <div className="col-md-4 text-center">
+            <div className="col-md-3 text-center">
               <img
                 src="https://marketplace.canva.com/EAFuJ5pCLLM/1/0/1600w/canva-black-and-gold-simple-business-man-linkedin-profile-picture-BM_NPo97JwE.jpg"
                 alt="Team Member"
@@ -69,7 +69,7 @@ function AboutUs() {
               <h4 className="team-name">John Doe</h4>
               <p className="team-role">CEO & Founder</p>
             </div>
-            <div className="col-md-4 text-center">
+            <div className="col-md-3 text-center">
               <img
                 src="https://media.gettyimages.com/id/1317804578/photo/one-businesswoman-headshot-smiling-at-the-camera.jpg?s=612x612&w=gi&k=20&c=tFkDOWmEyqXQmUHNxkuR5TsmRVLi5VZXYm3mVsjee0E="
                 alt="Team Member"
@@ -78,7 +78,7 @@ function AboutUs() {
               <h4 className="team-name">Jane Smith</h4>
               <p className="team-role">CTO</p>
             </div>
-            <div className="col-md-4 text-center">
+            <div className="col-md-3 text-center">
               <img
                 src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
                 alt="Team Member"

@@ -65,11 +65,14 @@ function UserNavbar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <img
-                  src="https://via.placeholder.com/30"
-                  alt="Profile"
-                  className="profile-icon"
-                />
+
+<img
+      src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
+      alt="Profile Icon"
+      className="profile-icon"
+      width="30"
+      height="30"
+    />
               </a>
               <ul
                 className="dropdown-menu dropdown-menu-end"

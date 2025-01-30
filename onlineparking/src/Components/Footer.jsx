@@ -5,8 +5,8 @@ function Footer() {
         <footer>
   <div class="footer-container">
     <div class="footer-column logo-name">
-      <img src="logo.png" alt="Company Logo" />
-      <p>Company Name</p>
+      <img src={require("../Images/CompanyLogo.jpeg")} alt="Company Logo" />
+      <p>QuickPark</p>
     </div>
     <div class="footer-column social-links">
       <h3>Follow Us</h3>

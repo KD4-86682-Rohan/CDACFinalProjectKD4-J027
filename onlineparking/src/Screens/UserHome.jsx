@@ -4,6 +4,7 @@ import UserNavbar from "../Components/UserNavbar";
 import "../CSS/UserHome.css"
 import "../CSS/Booking.css";
 
+
 function UserHome() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,14 +41,15 @@ function UserHome() {
               distance: "0.5 miles",
               price: "$5/hour",
               spots: "12 spots available",
-              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyFbbMl4yYqUv_Gvslzw0BNvqW01S-cYCZCw&s",
+              img: "https://img.freepik.com/free-photo/full-car-parking-lot-mall_1268-14318.jpg?t=st=1738213604~exp=1738217204~hmac=9928cc74a76e2e0f3ac97d1211ae0d1dbdff8194fbaab58e34450c4d0d093c78&w=996",
+              // img: "../Images/AvailableParking1.jpg"
             },
             {
               title: "Central Mall Parking",
               distance: "2 miles",
               price: "$4/hour",
               spots: "8 spots available",
-              img: "https://www.shutterstock.com/image-photo/parking-cars-without-people-260nw-1014849688.jpg",
+              img: "https://img.freepik.com/free-photo/horizontal-picture-car-parking-underground-garage-interior-with-neon-lights-autocars-parked-buildings-urban-constructions-space-transportation-vehicle-night-city-concept_343059-3077.jpg?t=st=1738213711~exp=1738217311~hmac=a4549ea1385cd630701627135ac3d7c5f8ae947210cb5bbe2399d5a1e1208a82&w=996",
             },
             {
               title: "Airport Terminal Parking",
@@ -72,7 +74,7 @@ function UserHome() {
               <p>{spot.spots}</p>
               <div className="popup-container">
       <button className="open-popup-button" onClick={togglePopup}>
-        Book Parking Slot
+        Book Now
       </button>
       {isOpen && (
         <div className="popup-overlay">
