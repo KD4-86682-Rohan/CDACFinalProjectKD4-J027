@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.onlineParking.DTO.ApiResponse;
@@ -26,7 +27,7 @@ import com.onlineParking.Services.ParkingSlotService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/User")
+@RequestMapping("/ParkingSlot")
 @CrossOrigin(origins = "http://localhost:3000")
 @Validated
 public class ParkingSlotsController {
@@ -41,17 +42,18 @@ public class ParkingSlotsController {
 		return ResponseEntity.ok(slots);
 	}
 	
-	@GetMapping("/getByStatus/{lId}/{slotStatus}")
-	public ResponseEntity<?> getParkingSlotsBySlotStatus(@PathVariable Long lId, @PathVariable SlotStatus slotStatus)
-	{
-		List<ParkingSlotRespDto> slots = parkingSlotService.getAllBySlotStatus(lId, slotStatus);
-		if(slots.isEmpty())
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-		return ResponseEntity.ok(slots);
+	@GetMapping("/getByStatus/{lId}")
+	public ResponseEntity<?> getParkingSlotsBySlotStatus(@PathVariable Long lId, @RequestParam SlotStatus slotStatus) {
+	    List<ParkingSlotRespDto> slots = parkingSlotService.getAllBySlotStatus(lId, slotStatus);
+	    if (slots.isEmpty()) {
+	        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No parking slots found for the given status.");
+	    }
+	    return ResponseEntity.ok(slots);
 	}
+
 	
-	@GetMapping("/getByType/{lId}/{slotType}")
-	public ResponseEntity<?> getParkingSlotBySlotType(@PathVariable Long lId, @PathVariable SlotType type)
+	@GetMapping("/getByType/{lId}")
+	public ResponseEntity<?> getParkingSlotBySlotType(@PathVariable Long lId, @RequestParam SlotType type)
 	{
 		List<ParkingSlotRespDto> slots = parkingSlotService.getAllBySlotType(lId, type);
 		if(slots.isEmpty())
