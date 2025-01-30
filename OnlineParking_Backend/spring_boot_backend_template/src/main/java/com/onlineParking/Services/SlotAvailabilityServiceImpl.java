@@ -48,7 +48,7 @@ public class SlotAvailabilityServiceImpl implements SlotAvailabilityService {
 
 	// Helper method to check if the slot is available on the given date
 	private boolean isSlotAvailable(ParkingSlots slot, Date date) {
-	    return availabilityDao.findByParkingSlotAndDateAndIsBookedFalse(slot, date) == null; 
+	    return availabilityDao.findBySlotAndDateAndIsBookedFalse(slot, date) == null; 
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class SlotAvailabilityServiceImpl implements SlotAvailabilityService {
 	
 	// Helper method to check if the slot is available
 		private boolean isSlotAvailable(ParkingSlots slot) {
-		    return availabilityDao.findByParkingSlotAndIsBookedFalse(slot) == null; 
+		    return availabilityDao.findBySlotAndIsBookedFalse(slot) == null; 
 		}
 	
 }

@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 	public String RegisterUser(UserReqDto user) {
 		User u=modelMapper.map(user, User.class);
 		User persistentUser = userDao.save(u);
-		return "Added New Category";
+		return "New user Registred";
 	}
 
 	@Override

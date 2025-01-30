@@ -13,7 +13,7 @@ import com.onlineParking.Pojos.ParkingSlots;
 public interface SlotAvailabilityDao extends JpaRepository<SlotAvailability, Long> {
     List<SlotAvailability> findBySlot(ParkingSlots slot);
     List<SlotAvailability> findByDate(LocalDate date);
-    Optional<SlotAvailability> findByParkingSlotAndDateAndIsBookedFalse(ParkingSlots slot, Date date);
-    Optional<SlotAvailability> findByParkingSlotAndIsBookedFalse(ParkingSlots slot);
+    Optional<SlotAvailability> findBySlotAndDateAndIsBookedFalse(ParkingSlots slot, Date date);
+    Optional<SlotAvailability> findBySlotAndIsBookedFalse(ParkingSlots slot);
 
 }
