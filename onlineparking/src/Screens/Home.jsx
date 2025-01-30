@@ -72,12 +72,14 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 
+
+
 const Home = () => {
   const images = [
-    "https://c8.alamy.com/comp/PPP6GX/parking-garage-in-downtown-milwaukee-PPP6GX.jpg",
-    "https://c8.alamy.com/comp/J0E9BT/car-parking-interior-shopping-mall-J0E9BT.jpg",
-    "https://c8.alamy.com/comp/2T9J443/dulles-airport-virginia-usaterminal-and-parking-lot-2T9J443.jpg",
-  ];
+    "https://img.freepik.com/free-photo/top-view-electric-cars-parking-lot_23-2148972403.jpg?t=st=1738218375~exp=1738221975~hmac=7a130380013fc8e053033721fb984d2fa4bef2336cbbcfffbd776c9a2bae9083&w=1060",
+    "https://img.freepik.com/free-photo/empty-parking-lot-parking-lane-outdoor-public-park_1127-3375.jpg?t=st=1738218525~exp=1738222125~hmac=955a4f62f628c2fbc7807e2c23b5f4b1d813848b6011a1b97a87d3ad3839f164&w=996",
+    "https://img.freepik.com/free-photo/city-square_1359-706.jpg?t=st=1738218656~exp=1738222256~hmac=05d8bcd5f4c75e2e164df0f09e92778fe7f4e17e87246b053344219b78eb4406&w=996",
+     ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

@@ -1,76 +1,75 @@
 .registration-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f7fafc;
-  }
-  
-  .registration-content {
-    width: 100%;
-    max-width: 600px;
-    background-color: #ffffff;
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .registration-content h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  
-  .registration-content p {
-    font-size: 14px;
-    color: #718096;
-    margin-bottom: 24px;
-    text-align: center;
-  }
-  
-  .input-group {
-    margin-bottom: 16px;
-  }
-  
-  .input-group label {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #4a5568;
-  }
-  
-  .input-group input,
-  .input-group select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 14px;
-  }
-  
-  .input-group input:focus,
-  .input-group select:focus {
-    border-color: #3182ce;
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.4);
-  }
-  
-  .btn {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #3182ce;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #2b6cb0;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7fafc;
+}
+
+.registration-content {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.registration-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.registration-content p {
+  font-size: 14px;
+  color: #718096;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #4a5568;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #3182ce;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.4);
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #3182ce;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2b6cb0;
+}
