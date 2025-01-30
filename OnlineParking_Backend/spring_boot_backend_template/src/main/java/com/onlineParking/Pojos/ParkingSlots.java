@@ -1,6 +1,5 @@
 package com.onlineParking.Pojos;
 
-import java.time.LocalDateTime;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,6 +14,10 @@ public class ParkingSlots extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_id", nullable = false) // Foreign Key to ParkingLocation
     private ParkingLocation location;
+    
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "vendor_id", nullable = false)
+//    private User vendor;
 
     @Column(name = "slot_number", nullable = false)
     private String slotNumber;
@@ -31,5 +34,13 @@ public class ParkingSlots extends BaseEntity {
     
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private SlotStatus status;
+    private SlotStatus slotStatus;
+    
+    @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT TRUE")
+    private boolean status;
+
+	@PrePersist
+	public void prePersist() {
+		this.status = true;
+	}
 }

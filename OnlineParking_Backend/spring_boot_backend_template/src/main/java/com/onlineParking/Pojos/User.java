@@ -2,7 +2,6 @@ package com.onlineParking.Pojos;
 
 import java.sql.Date;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,28 +9,34 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name="Users")
+@Table(name = "Users")
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString(callSuper = true)
-public class User extends BaseEntity{
-	@Column(name="first_name", length = 50)
+public class User extends BaseEntity {
+	@Column(name = "first_name", length = 50)
 	private String firstName;
-	@Column(name="last_name", length = 50)
+	@Column(name = "last_name", length = 50)
 	private String lastName;
 	@Column(length = 100)
 	private String email;
 	@Column(length = 50)
 	private String password;
-	@Column(name="phone_number",length = 10)
+	@Column(name = "phone_number", length = 10)
 	private String phone;
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	private Date dob;
 	@Enumerated(EnumType.STRING)
 	private Role role;
-	@Column(name="license_number", length = 20)
-	private String LicenseNumber;
-	
+	@Column(name = "license_number", length = 20)
+	private String licenseNumber;
+	private boolean status;
+
+	@PrePersist
+	public void prePersist() {
+		this.status = true;
+	}
+
 }

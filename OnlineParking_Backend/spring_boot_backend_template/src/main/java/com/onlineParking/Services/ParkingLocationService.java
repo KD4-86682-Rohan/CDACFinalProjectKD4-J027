@@ -10,4 +10,8 @@ public interface ParkingLocationService {
 	List<ParkingLocationRespDto> getAllParkingLocations();
 	
 	ApiResponse addNewParkingLocation(ParkingLocationReqDto dto, Long vendorId);
+	
+	ApiResponse deleteParkingLocation(Long id, Long vId);
+	
+	ApiResponse updateParkingLocation(ParkingLocationReqDto dto,Long id, Long vid);
 }

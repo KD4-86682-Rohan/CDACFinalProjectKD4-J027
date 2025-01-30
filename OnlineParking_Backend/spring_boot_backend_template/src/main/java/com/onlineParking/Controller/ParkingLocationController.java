@@ -7,21 +7,21 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.onlineParking.DTO.ApiResponse;
 import com.onlineParking.DTO.ParkingLocationReqDto;
 import com.onlineParking.DTO.ParkingLocationRespDto;
 import com.onlineParking.Services.ParkingLocationService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-
-
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/ParkingLocation")
@@ -31,8 +31,8 @@ public class ParkingLocationController {
 
 	@Autowired
 	private ParkingLocationService parkingLocationService;
-	
-	@GetMapping
+
+	@GetMapping()
 	public ResponseEntity<?> getParkingLocations() {
 //		System.out.println("get all");
 		List<ParkingLocationRespDto> locations = parkingLocationService.getAllParkingLocations();
@@ -40,12 +40,27 @@ public class ParkingLocationController {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 		return ResponseEntity.ok(locations);
 	}
-	
-	@PostMapping("/{vendor_id}")
-	public ResponseEntity<?> addNewParkingLocation(@PathVariable Long vendor_id,@RequestBody ParkingLocationReqDto location) {
+
+	@PostMapping("/addLocation/{vendor_id}")
+	public ResponseEntity<?> addNewParkingLocation(@PathVariable Long vendor_id,
+			@RequestBody ParkingLocationReqDto location) {
 		return ResponseEntity.status(HttpStatus.CREATED)
 				.body(parkingLocationService.addNewParkingLocation(location, vendor_id));
 	}
-	
-	
+
+	@DeleteMapping("/deleteLoaction/{id}/{vId}")
+	public ResponseEntity<?> deleteLocation(@PathVariable Long id, @PathVariable Long vId) {
+		try {
+			// invoke service layer method
+			return ResponseEntity.ok(parkingLocationService.deleteParkingLocation(id, vId));
+		} catch (RuntimeException e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse(e.getMessage()));
+		}
+	}
+
+	@PutMapping("/updateLocation/{id}/{vId}")
+	public ResponseEntity<?> updateLocation(@PathVariable Long id,@PathVariable Long vId, @RequestBody ParkingLocationReqDto location) {
+		return ResponseEntity.ok(parkingLocationService.updateParkingLocation(location, id ,vId));
+	}
+
 }

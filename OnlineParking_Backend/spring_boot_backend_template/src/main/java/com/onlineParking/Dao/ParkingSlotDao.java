@@ -11,6 +11,6 @@ import com.onlineParking.Pojos.SlotType;
 
 public interface ParkingSlotDao extends JpaRepository<ParkingSlots, Long> {
     List<ParkingSlots> findByLocation(ParkingLocation location);
-    List<ParkingSlots> findByStatus(SlotStatus status);
+    List<ParkingSlots> findBySlotStatus(SlotStatus status);
     List<ParkingSlots> findBySlotType(SlotType slotType);
 }
