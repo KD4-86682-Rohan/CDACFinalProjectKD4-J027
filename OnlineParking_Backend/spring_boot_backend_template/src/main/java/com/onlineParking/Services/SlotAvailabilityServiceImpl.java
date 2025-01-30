@@ -52,6 +52,7 @@ public class SlotAvailabilityServiceImpl implements SlotAvailabilityService {
 
 
 	// Helper method to check if the slot is available on the given date
+
 	private boolean isSlotAvailable(ParkingSlots slot, LocalDate date) {
 	    return availabilityDao.findBySlotAndDateAndIsBookedFalse(slot, date).isEmpty();
 	}
@@ -104,6 +105,7 @@ public class SlotAvailabilityServiceImpl implements SlotAvailabilityService {
 		if(!parkingSlots.isStatus())
 		{
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Slot found");
+
 		}
 		SlotAvailability slotAvailability = modelMapper.map(dto, SlotAvailability.class);
 		slotAvailability.setSlot(parkingSlots);
