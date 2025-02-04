@@ -1,22 +1,22 @@
 package com.onlineParking.Services;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import com.onlineParking.DTO.ApiResponse;
+import com.onlineParking.DTO.ReviewReqDto;
+import com.onlineParking.DTO.ReviewRespDto;
+import com.onlineParking.Dao.ReviewDao;
+import com.onlineParking.Dao.UserDao;
+import com.onlineParking.Dao.ParkingLocationDao;
+import com.onlineParking.Pojos.Reviews;
+import com.onlineParking.Pojos.User;
+import com.onlineParking.Pojos.ParkingLocation;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.onlineParking.DTO.ApiResponse;
-import com.onlineParking.DTO.ReviewReqDto;
-import com.onlineParking.DTO.ReviewRespDto;
-import com.onlineParking.Dao.ParkingLocationDao;
-import com.onlineParking.Dao.ReviewDao;
-import com.onlineParking.Dao.UserDao;
-import com.onlineParking.Pojos.ParkingLocation;
-import com.onlineParking.Pojos.Reviews;
-import com.onlineParking.Pojos.User;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -24,62 +24,50 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Autowired
     private ReviewDao reviewDao;
-
+    
     @Autowired
     private UserDao userDao;
-
+    
     @Autowired
     private ParkingLocationDao parkingLocationDao;
-
+    
     @Autowired
     private ModelMapper modelMapper;
 
-    // Add a new review
     @Override
-    public ApiResponse addReview(ReviewReqDto dto, Long userId, Long locationId) {
-        User user = userDao.findById(userId).orElseThrow(() -> new RuntimeException("Invalid User Id"));
-        ParkingLocation location = parkingLocationDao.findById(locationId).orElseThrow(() -> new RuntimeException("Invalid Location Id"));
-        
-        Reviews review = modelMapper.map(dto, Reviews.class);
+    public ApiResponse addReview(Long userId, Long locationId, ReviewReqDto reviewReqDto) {
+        User user = userDao.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+        ParkingLocation location = parkingLocationDao.findById(locationId).orElseThrow(() -> new RuntimeException("Location not found"));
+
+        Reviews review = new Reviews();
         review.setUser(user);
         review.setLocation(location);
-        
-        Reviews savedReview = reviewDao.save(review);
-        return new ApiResponse("Review added successfully with ID = " + savedReview.getId());
+        review.setRating(reviewReqDto.getRating());
+        review.setReviewText(reviewReqDto.getReviewText());
+        review.setDeleted(false);
+
+        reviewDao.save(review);
+        return new ApiResponse("Review added successfully");
     }
 
-    // Edit an existing review
     @Override
-    public ApiResponse editReview(Long reviewId, ReviewReqDto dto, Long userId) {
-        Reviews review = reviewDao.findById(reviewId).orElseThrow(() -> new RuntimeException("Invalid Review Id"));
-        
-        if (!review.getUser().getId().equals(userId)) {
-            return new ApiResponse("You can only edit your own reviews");
-        }
+    public ApiResponse editReview(Long reviewId, ReviewReqDto reviewReqDto) {
+        Reviews review = reviewDao.findById(reviewId).orElseThrow(() -> new RuntimeException("Review not found"));
+        review.setRating(reviewReqDto.getRating());
+        review.setReviewText(reviewReqDto.getReviewText());
 
-        review.setRating(dto.getRating());
-        review.setReviewText(dto.getReviewText());
         reviewDao.save(review);
-        
         return new ApiResponse("Review updated successfully");
     }
 
-    // Soft delete a review
     @Override
-    public ApiResponse deleteReview(Long reviewId, Long userId) {
-        Reviews review = reviewDao.findById(reviewId).orElseThrow(() -> new RuntimeException("Invalid Review Id"));
-
-        if (!review.getUser().getId().equals(userId)) {
-            return new ApiResponse("You can only delete your own reviews");
-        }
-
-        review.setDeleted(true); // Assuming a `deleted` boolean column in the Review entity for soft deletion
+    public ApiResponse softDeleteReview(Long reviewId) {
+        Reviews review = reviewDao.findById(reviewId).orElseThrow(() -> new RuntimeException("Review not found"));
+        review.setDeleted(true);
         reviewDao.save(review);
-
-        return new ApiResponse("Review deleted successfully");
+        return new ApiResponse("Review soft deleted successfully");
     }
 
-    // Get all reviews
     @Override
     public List<ReviewRespDto> getAllReviews() {
         return reviewDao.findAllByDeletedFalse().stream()
@@ -87,7 +75,6 @@ public class ReviewServiceImpl implements ReviewService {
                 .collect(Collectors.toList());
     }
 
-    // Get all reviews for a specific location
     @Override
     public List<ReviewRespDto> getReviewsByLocation(Long locationId) {
         return reviewDao.findByLocationIdAndDeletedFalse(locationId).stream()

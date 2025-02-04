@@ -1,18 +1,17 @@
 package com.onlineParking.Services;
 
-import java.util.List;
-
 import com.onlineParking.DTO.ApiResponse;
 import com.onlineParking.DTO.ReviewReqDto;
 import com.onlineParking.DTO.ReviewRespDto;
+import java.util.List;
 
 public interface ReviewService {
     
-    ApiResponse addReview(ReviewReqDto dto, Long userId, Long locationId);
+    ApiResponse addReview(Long userId, Long locationId, ReviewReqDto reviewReqDto);
     
-    ApiResponse editReview(Long reviewId, ReviewReqDto dto, Long userId);
+    ApiResponse editReview(Long reviewId, ReviewReqDto reviewReqDto);
     
-    ApiResponse deleteReview(Long reviewId, Long userId);
+    ApiResponse softDeleteReview(Long reviewId);
     
     List<ReviewRespDto> getAllReviews();
     
