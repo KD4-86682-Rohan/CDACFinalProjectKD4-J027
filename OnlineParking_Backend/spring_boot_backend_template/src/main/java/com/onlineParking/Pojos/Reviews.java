@@ -26,8 +26,8 @@ public class Reviews extends BaseEntity {
     @Column(name = "review_text")
     private String reviewText;
 
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
+//    @Column(name = "created_at", nullable = false)
+//    private LocalDateTime createdAt;
     
     @Column(name = "deleted", nullable = false)
     private boolean deleted = false; // Default: Not deleted
