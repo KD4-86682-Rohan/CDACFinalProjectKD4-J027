@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.onlineParking.CustomException.ApiException;
+import com.onlineParking.DTO.ApiResponse;
+import com.onlineParking.DTO.NotificationReqDto;
 import com.onlineParking.DTO.NotificationRespDto;
 import com.onlineParking.Dao.NotificationDao;
 import com.onlineParking.Dao.UserDao;
@@ -30,11 +32,26 @@ public class NotificationServiceImpl implements NotificationService {
 	
 	@Autowired
 	private ModelMapper modelMapper;
+	
+	
+	
+
+	@Override
+	public ApiResponse addNotification(Long userId, NotificationReqDto dto) {
+		User user = userDao.findById(userId).orElseThrow(()->new ApiException("Invalid Id"));
+		Notifications notification = modelMapper.map(dto, Notifications.class);
+		notification.setUser(user);
+		notificationDao.save(notification);
+		return new ApiResponse("Notification Added Successfully");
+	}
+
+
+
 
 	@Override
 	public List<NotificationRespDto> getNotificationByUserId(Long userId) {
-		User user = userDao.findById(userId).orElseThrow(()->new ApiException("Invalid Id"));
-		Optional<Notifications> notificationList = notificationDao.findById(userId);
+//		User user = userDao.findById(userId).orElseThrow(()->new ApiException("Invalid Id"));
+//		Optional<Notifications> notificationList = notificationDao.findById(userId);
 		
 		return notificationDao.findById(userId)
 				.stream()

@@ -9,4 +9,5 @@ import com.onlineParking.Pojos.User;
 
 public interface BookingDao extends JpaRepository<Bookings, Long> {
     List<Bookings> findByUser(User user);
+    List<Bookings> findByVendor(User vender);
 }

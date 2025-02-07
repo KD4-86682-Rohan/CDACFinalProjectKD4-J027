@@ -19,6 +19,10 @@ public class Bookings extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "slot_id", nullable = false) // Foreign Key to ParkingSlot
     private ParkingSlots slot;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "vender_id", nullable = false) // Foreign key to Vender
+    private User vendor;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "slot_type", nullable = false)

@@ -40,7 +40,7 @@ const Register = () => {
     try {
       const response = await admin.register(user);
       console.log("User registered successfully", response.data);
-      navigate("/");
+      navigate("/Login");
     } catch (error) {
       alert("Error during registration. Please try again.");
       console.error("Registration error: ", error.response);
