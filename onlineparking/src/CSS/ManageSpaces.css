@@ -1,6 +1,7 @@
 ManageSpaces.css
 .container {
-  padding: 20px;
+  padding: 80px 20px 60px; /* Increase padding */
+  min-height: 10vh; /* Adjust height */
   font-family: Arial, sans-serif;
 }
 
@@ -60,3 +61,4 @@ h1 {
 .delete-btn {
   color: #dc3545;
 }
+

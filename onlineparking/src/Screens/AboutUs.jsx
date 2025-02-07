@@ -27,7 +27,7 @@ function AboutUs() {
               />
             </div>
             <div className="col-md-4">
-              <h2 className="section-title">Who We Are</h2>
+              <h2 className="section-title">Our Story</h2>
               <p className="section-text">
                 QuickPark is an innovative platform dedicated to making parking
                 stress-free. With our state-of-the-art technology, we connect
@@ -35,9 +35,16 @@ function AboutUs() {
                 convenience.
               </p>
               <p className="section-text">
-                Established with a mission to revolutionize parking experiences,
-                we aim to provide solutions that cater to drivers, businesses,
-                and cities.
+              Our origin story takes place in a grundy, concrete car park. Like everyone, 
+              we were experiencing exorbitant parking prices, the gut-wrench of a massive fine or tow, 
+              the broken parking machines, and the frustrating daily search for a parking spot.
+
+              But when we looked around, we also saw available parking space everywhere - 
+              empty driveways, underused spaces outside supermarkets, churches, hotels, and in business parks.
+
+              Why not make them available to the public? The businesses would earn some extra income,
+               fewer new car parks would need to be built, and more affordable, effortless,
+                transparent parking would be available to everyone.
               </p>
             </div>
           </div>
@@ -49,8 +56,9 @@ function AboutUs() {
         <div className="container text-center">
           <h2 className="section-title">Our Mission</h2>
           <p className="section-text">
-            To simplify parking and provide efficient solutions for modern-day
-            mobility needs.
+          Parkable was founded with a playful spirit and an ambitious goal: to make parking easy
+           and stress-free, while ensuring that communities, workplaces, and commercial properties
+            make the best use of their space.
           </p>
         </div>
       </section>
