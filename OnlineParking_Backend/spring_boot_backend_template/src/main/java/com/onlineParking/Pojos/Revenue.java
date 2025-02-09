@@ -1,6 +1,5 @@
 package com.onlineParking.Pojos;
 
-import java.time.LocalDateTime;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,6 +14,10 @@ public class Revenue extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "location_id", nullable = false) // Foreign Key to ParkingLocation
     private ParkingLocation location;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false) // Foreign Key to user
+    private User user;
 
     @Column(name = "total_revenue", nullable = false)
     private Double totalRevenue;

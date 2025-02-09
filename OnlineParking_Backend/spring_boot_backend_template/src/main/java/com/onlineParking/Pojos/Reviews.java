@@ -1,6 +1,5 @@
 package com.onlineParking.Pojos;
 
-import java.time.LocalDateTime;
 import jakarta.persistence.*;
 import lombok.*;
 

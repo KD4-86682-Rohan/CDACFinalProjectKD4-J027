@@ -1,6 +1,13 @@
 package com.onlineParking.Pojos;
 
 import java.sql.Date;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -14,7 +21,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString(callSuper = true)
-public class User extends BaseEntity {
+public class User extends BaseEntity {//implements UserDetails{
 	@Column(name = "first_name", length = 50)
 	private String firstName;
 	@Column(name = "last_name", length = 50)
@@ -38,5 +45,19 @@ public class User extends BaseEntity {
 	public void prePersist() {
 		this.status = true;
 	}
+	
+//	 @Override
+//	    public Collection<? extends GrantedAuthority> getAuthorities() {
+//	        return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
+//	    }
+//	 
+//	@Override
+//	public String getUsername() {
+//		return this.email;
+//	}
+//	@Override
+//	public String getPassword() {
+//		return password;
+//	}
 
 }
