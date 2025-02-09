@@ -10,7 +10,7 @@ import com.onlineParking.DTO.AuditLogRespDto;
 import com.onlineParking.Services.AuditLogService;
 
 @RestController
-@RequestMapping("/audit-logs")
+@RequestMapping("/auditLogs")
 public class AuditLogController {
 
     @Autowired
