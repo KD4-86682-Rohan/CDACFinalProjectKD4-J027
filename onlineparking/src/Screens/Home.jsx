@@ -232,7 +232,6 @@ const Home = () => {
             { name: "John Doe", feedback: "Found parking spots easily! Great experience." },
             { name: "Jane Smith", feedback: "Managing parking has never been easier!" },
             { name: "Mike Johnson", feedback: "Reliable and convenient parking solutions." },
-            { name: "Mike Johnson", feedback: "Reliable and convenient parking solutions." },
           ].map((testimonial, index) => (
             <div key={index} className="testimonial">
               <p>
