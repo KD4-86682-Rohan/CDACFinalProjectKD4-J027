@@ -1,15 +1,21 @@
-// <<<<<<< HEAD
+
 // import React from "react";
 // import "../CSS/VendorHome.css"; // Include CSS for styling
 // import Footer from "../Components/Footer";
 // // import AdminNavbar from "../Components/AdminNavbar";
 // import VendorNavbar from "../Components/VendorNavbar";
 
+// import React from "react";
+// import "../CSS/VendorHome.css"; // Include CSS for styling
+// import Footer from "../Components/Footer";
+// import AdminNavbar from "../Components/AdminNavbar";
+
 // const VendorDashboard = () => {
 //   return (
 //     <div>
 //       <VendorNavbar/>
 //       {/* <AdminNavbar /> */}
+
 //     <div className="dashboard-container">
 //       {/* Welcome Section */}
 //       <div className="welcome-section">
@@ -133,6 +139,7 @@
 //           <p>Average Daily Rate</p>
 //         </div>
 {/* ======= */}
+=======
 // import React from "react";
 // import "../CSS/VendorHome.css"; // Include CSS for styling
 // import Footer from "../Components/Footer";
@@ -285,6 +292,46 @@ import Footer from "../Components/Footer";
 const VendorDashboard = () => {
   const [activeTab, setActiveTab] = useState("manage");
 
+//   return (
+//     <div> 
+//       <VendorNavbar/>
+//     <div className="vendor-dashboard">
+//     <h2 className="dashboard-title" style={{ textAlign: 'center', marginTop: '20px' }}>Dashboard Overview</h2>
+//     {/* Centering Container */}
+//     <div style={{
+//         display: 'flex',
+//         justifyContent: 'center', // Center horizontally
+//         alignItems: 'center', // Center vertically
+//         height: '10vh', // Full viewport height
+//         flexDirection: 'column' // Stack items vertically
+//       }}>
+//       <nav className="dashboard-nav" style={{ display: 'flex', gap: '20px' }}>
+//         <button
+//           className={activeTab === "manage" ? "active" : ""}
+//           onClick={() => setActiveTab("manage")}
+//         >
+//           {/* 🚗 Manage Parking Spaces */}
+//         </button>
+//         <button
+//           className={activeTab === "earnings" ? "active" : ""}
+//           onClick={() => setActiveTab("earnings")}
+//         >
+//           💰 View Earnings
+//         </button>
+//         <button
+//           className={activeTab === "feedback" ? "active" : ""}
+//           onClick={() => setActiveTab("feedback")}
+//         >
+//           💬 Customer Feedback
+//         </button>
+//       </nav>
+//       </div>
+
+//       <div className="dashboard-content">
+//         {activeTab === "manage" && <ManageParkingSpaces />}
+//         {activeTab === "earnings" && <ViewEarnings />}
+ 
+
   return (
     <div> 
       <VendorNavbar/>
@@ -303,7 +350,7 @@ const VendorDashboard = () => {
           className={activeTab === "manage" ? "active" : ""}
           onClick={() => setActiveTab("manage")}
         >
-          {/* 🚗 Manage Parking Spaces */}
+          🚗 Manage Parking Spaces
         </button>
         <button
           className={activeTab === "earnings" ? "active" : ""}
@@ -326,6 +373,24 @@ const VendorDashboard = () => {
         {activeTab === "feedback" && <CustomerFeedback />}
 {/* >>>>>>> Stashed changes */}
       </div>
+
+      {/* Statistics Section */}
+      {/* <div className="dashboard-cards">
+        <div className="card">
+          <h3>Total Cars Parked</h3>
+          <h5>1,234</h5>
+        </div>
+        <div className="card">
+          <h3>Total Earnings</h3>
+          <h5>Rs. 15,680</h5>
+        </div>
+        <div className="card">
+          <h3>Active Parking Spaces</h3>
+          <h5>25</h5>
+        </div>
+      </div> */}
+
+      {/* Footer */}
     </div>
 
     <Footer />

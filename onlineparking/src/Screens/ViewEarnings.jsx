@@ -1,3 +1,4 @@
+
 // <<<<<<< HEAD
 // import React from "react";
 // import "../CSS/ViewEarnings.css";
@@ -214,13 +215,10 @@ const ViewEarnings = () => {
           </div>
         </div>
       </div>
-{/* >>>>>>> caab4336dab92430f4672398c9d31ff8c3c15003 */}
+
     </div>
   );
 };
 
 export default ViewEarnings;
-// <<<<<<< HEAD
-// =======
 
-// >>>>>>> caab4336dab92430f4672398c9d31ff8c3c15003

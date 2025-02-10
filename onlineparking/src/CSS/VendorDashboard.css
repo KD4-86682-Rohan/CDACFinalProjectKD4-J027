@@ -1,4 +1,4 @@
-/* <<<<<<< HEAD
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -46,7 +46,7 @@ body {
   }
   
   .actions {
-======= */
+
 .vendor-dashboard {
     width: 100%;
     padding: 20px;
@@ -54,22 +54,20 @@ body {
   }
   
   .dashboard-nav {
-/* >>>>>>> caab4336dab92430f4672398c9d31ff8c3c15003 */
+
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
   }
   
-/* <<<<<<< HEAD
+
   .actions .btn {
-======= */
+
   .dashboard-nav button {
-/* >>>>>>> caab4336dab92430f4672398c9d31ff8c3c15003 */
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-/* <<<<<<< HEAD
     font-size: 14px;
   }
   
@@ -117,7 +115,6 @@ body {
   .card .description {
     font-size: 12px;
     color: #6c757d;
-======= */
     font-size: 16px;
     background-color: #f0f0f0;
     transition: 0.3s;
@@ -133,6 +130,5 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-/* >>>>>>> caab4336dab92430f4672398c9d31ff8c3c15003 */
   }
   

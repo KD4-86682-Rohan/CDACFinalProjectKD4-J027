@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.onlineParking.DTO.ApiResponse;
 import com.onlineParking.DTO.BookingReqDto;
+import com.onlineParking.DTO.BookingRequestWrapper;
 import com.onlineParking.DTO.BookingRespDto;
-import com.onlineParking.DTO.VendorBookingDto;
 import com.onlineParking.Services.BookingService;
 
 @RestController
@@ -43,17 +43,35 @@ public class BookingContoller {
 	
 	
 	//add booking
+//	@PostMapping("/addBooking/{userId}")
+//	public ResponseEntity<?> addBooking(@PathVariable Long userId,@RequestBody VendorBookingDto vendorIds, @RequestBody BookingReqDto dto){
+//		
+//		return ResponseEntity.status(HttpStatus.CREATED)
+//				.body(bookingService.addBooking(userId, vendorIds, dto));
+//	}
+	
+	
+
 	@PostMapping("/addBooking/{userId}")
-	public ResponseEntity<?> addBooking(@PathVariable Long userId,@RequestBody VendorBookingDto vendorIds, @RequestBody BookingReqDto dto){
-		
-		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(bookingService.addBooking(userId, vendorIds, dto));
+	public ResponseEntity<ApiResponse> addBooking(
+	    @PathVariable Long userId,
+	    @RequestBody BookingRequestWrapper requestWrapper
+	) {
+	    ApiResponse response = bookingService.addBooking(
+	        userId,
+	        requestWrapper.getVendorBookingDto(),
+	        requestWrapper.getBookingReqDto()
+	    );
+	    return ResponseEntity.ok(response);
 	}
+
+
+
 	
 	
 	@PutMapping("/extendBooking/{userId}")
-	public ResponseEntity<?> extendBooking(@PathVariable Long userId, @RequestParam Long slotId,@RequestBody BookingReqDto dto){
-		return ResponseEntity.ok(bookingService.extendBooking(userId, slotId, dto));
+	public ResponseEntity<?> extendBooking(@PathVariable Long userId, @RequestBody BookingReqDto dto){
+		return ResponseEntity.ok(bookingService.extendBooking(userId, dto));
 	}
 	
 	@DeleteMapping("/cancelBooking/{userId}")
