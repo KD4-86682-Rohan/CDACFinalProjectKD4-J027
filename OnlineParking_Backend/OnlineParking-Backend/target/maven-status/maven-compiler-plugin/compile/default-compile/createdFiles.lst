@@ -1,9 +1,9 @@
-com\onlineParking\DTO\CityDto.class
 com\onlineParking\Controller\ParkingSlotsController.class
 com\onlineParking\Pojos\ParkingSlots.class
 com\onlineParking\DTO\ApiResponse.class
 com\onlineParking\Security\JwtUtil.class
 com\onlineParking\Dao\AuditLogDao.class
+com\onlineParking\CustomException\ApiException.class
 com\onlineParking\Services\ParkingLocationServiceImpl.class
 com\onlineParking\Services\ReviewServiceImpl.class
 com\onlineParking\DTO\BookingReqDto.class
@@ -17,7 +17,6 @@ com\onlineParking\Pojos\User.class
 com\onlineParking\Controller\BookingContoller.class
 com\onlineParking\Pojos\PaymentMethod.class
 com\onlineParking\Dao\SlotAvailabilityDao.class
-com\onlineParking\CustomExceptions\AuthenticationException.class
 com\onlineParking\DTO\ReviewRespDto.class
 com\onlineParking\Pojos\Role.class
 com\onlineParking\Pojos\Revenue.class
@@ -34,7 +33,6 @@ com\onlineParking\Pojos\Notifications.class
 com\onlineParking\DTO\UserRespDto.class
 com\onlineParking\Services\UserServiceImpl.class
 com\onlineParking\Dao\NotificationDao.class
-com\onlineParking\CustomExceptions\ApiException.class
 com\onlineParking\Dao\UserDao.class
 com\onlineParking\Dao\PaymentDao.class
 com\onlineParking\Pojos\Reviews.class
@@ -57,6 +55,7 @@ com\onlineParking\Services\SlotAvailabilityService.class
 com\onlineParking\Pojos\Gender.class
 com\onlineParking\Services\PaymentService.class
 com\onlineParking\Security\WebConfig.class
+com\onlineParking\CustomException\ResourceNotFoundException.class
 com\onlineParking\DTO\RevenueRespDto.class
 com\onlineParking\Pojos\AuditLog.class
 com\onlineParking\Services\SlotAvailabilityServiceImpl.class
@@ -77,7 +76,6 @@ com\onlineParking\DTO\ParkingLocationReqDto.class
 com\onlineParking\Services\ParkingSlotServiceImpl.class
 com\onlineParking\DTO\BaseDto.class
 com\onlineParking\Pojos\SlotStatus.class
-com\onlineParking\CustomExceptions\ResourceNotFoundException.class
 com\onlineParking\Controller\ReviewsController.class
 com\onlineParking\Pojos\BookingStatus.class
 com\onlineParking\Services\NotificationServiceImpl.class
