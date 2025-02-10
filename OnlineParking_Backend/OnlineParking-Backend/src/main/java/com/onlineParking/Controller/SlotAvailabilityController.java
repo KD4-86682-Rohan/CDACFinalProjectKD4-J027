@@ -29,21 +29,31 @@ public class SlotAvailabilityController {
 	@Autowired
 	private SlotAvailabilityService slotAvailabilityService;
 	
-	@PostMapping("/addAvailability/{sId}")
-	public ResponseEntity<?> addSlotAvailability(@PathVariable Long sId,@Valid @RequestBody SlotAvailabilityReqDto dto)
-	{
-		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(slotAvailabilityService.addNewSlotAvailability(sId, dto));
-	}
+//	@PostMapping("/addAvailability/{sId}")
+//	public ResponseEntity<?> addSlotAvailability(@PathVariable Long sId,@Valid @RequestBody SlotAvailabilityReqDto dto)
+//	{
+//		return ResponseEntity.status(HttpStatus.CREATED)
+//				.body(slotAvailabilityService.addNewSlotAvailability(sId, dto));
+//	}
+	
+//	@GetMapping("/availabilityByDate/{lId}")
+//	public ResponseEntity<?> checkAvailabilityByDate(@PathVariable Long lId, @RequestParam("date") LocalDate date) {
+//	    List<ParkingSlotRespDto> slots = slotAvailabilityService.findByDate(lId, date);
+//	    if (slots.isEmpty()) {
+//	        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//	    }
+//	    return ResponseEntity.ok(slots);
+//	}
 	
 	@GetMapping("/availabilityByDate/{lId}")
 	public ResponseEntity<?> checkAvailabilityByDate(@PathVariable Long lId, @RequestParam("date") LocalDate date) {
 	    List<ParkingSlotRespDto> slots = slotAvailabilityService.findByDate(lId, date);
 	    if (slots.isEmpty()) {
-	        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+	        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("No slots available on this date.");
 	    }
 	    return ResponseEntity.ok(slots);
 	}
+
 	
 	@GetMapping("/availabilityBySlot/{lId}")
 	public ResponseEntity<?> checkAvailabilityBySlot(@PathVariable Long lId)

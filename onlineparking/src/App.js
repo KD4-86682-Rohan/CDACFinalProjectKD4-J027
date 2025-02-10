@@ -35,12 +35,9 @@ function App() {
         <Route path='/availableparking' element={<ParkingList />} />
         <Route path='/mybookings' element={<MyBookings />} />
         <Route path='/profile' element={<Profile/>}/>
-
-
         <Route path="/vendor-parking" element={<ParkingSpaces />} />
         <Route path="/vendor-account" element={<VendorAccount />} />
-{/* <<<<<<< Updated upstream */}
-=======
+
         {/* <Route path='' element={<Ven/>}/> */}
 
 
