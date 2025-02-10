@@ -27,10 +27,10 @@ export const VendorNavbar = () => {
       <div className="navbar-logo">QuickPark</div>
       <div className="navbar-links">
         <Link to="/vendorhome" className="navbar-button">Dashboard</Link>
-        <Link to="/my-parking-spaces" className="navbar-button">My Parking Spaces</Link>
+        <Link to="/vendor-parking" className="navbar-button">My Parking Spaces</Link>
         {/* <Link to="/view-earnings" className="navbar-button">View Earnings</Link>
         <Link to="/customer-feedback" className="navbar-button">Customer Feedback</Link> */}
-        <Link to="/account" className="navbar-button">Account</Link>
+        <Link to="/vendor-account" className="navbar-button">Account</Link>
         <Link to="/settings" className="navbar-button">Settings</Link>
         <Link to="/logout" className="navbar-button logout">Logout</Link>
       </div>

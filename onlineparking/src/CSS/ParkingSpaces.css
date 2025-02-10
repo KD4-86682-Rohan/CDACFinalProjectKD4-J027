@@ -1,0 +1,130 @@
+/* Main Page Layout */
+.page-container {
+    background-color: #eef2f3;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Top Navigation Bar */
+  .top-navbar {
+    background-color: #172b4d;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+  }
+  
+  .top-navbar h2 {
+    margin: 0;
+  }
+  
+  .nav-btn {
+    background: none;
+    border: none;
+    color: white;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .nav-btn:hover, .nav-btn.active {
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Parking Spaces */
+  .parking-spaces-container {
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  .add-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .parking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Parking Space Card */
+  .parking-space-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .parking-space-card h3 {
+    margin-bottom: 5px;
+  }
+  
+  .location {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .rates-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .rate-box {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .status-container {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .status-dot.active {
+    background-color: green;
+  }
+  
+  .status-dot.inactive {
+    background-color: red;
+  }
+  
+  .actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .delete-btn {
+    color: red;
+  }
+  

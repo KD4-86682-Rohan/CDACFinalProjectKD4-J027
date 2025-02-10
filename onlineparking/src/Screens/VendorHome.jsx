@@ -232,7 +232,7 @@ const VendorDashboard = () => {
       </div>
 
       {/* Statistics Section */}
-      <div className="dashboard-cards">
+      {/* <div className="dashboard-cards">
         <div className="card">
           <h3>Total Cars Parked</h3>
           <h5>1,234</h5>
@@ -245,7 +245,7 @@ const VendorDashboard = () => {
           <h3>Active Parking Spaces</h3>
           <h5>25</h5>
         </div>
-      </div>
+      </div> */}
 
       {/* Footer */}
   
