@@ -1,6 +1,8 @@
 package com.onlineParking.Services;
 
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
@@ -50,27 +52,62 @@ public class UserServiceImpl implements UserService {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
 	}
 
+//	@Override
+//	public ResponseEntity<?> LoginUser(UserAuthDto user) {
+//
+//	    Optional<User> userOpt = userDao.findByEmail(user.getEmail());
+//
+//	    if (userOpt.isEmpty()) {
+//	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
+//	    }
+//
+//	    User u = userOpt.get();
+//
+//	    // Validate password
+//	    if (!passwordEncoder.matches(user.getPassword(), u.getPassword())) {
+//	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
+//	    }
+//
+//	    // Authentication successful, map user to UserRespDto
+//	    UserRespDto userResponse = modelMapper.map(u, UserRespDto.class);
+//
+//	    return ResponseEntity.ok(userResponse);
+//	}
+	
 	@Override
 	public ResponseEntity<?> LoginUser(UserAuthDto user) {
-
 	    Optional<User> userOpt = userDao.findByEmail(user.getEmail());
 
 	    if (userOpt.isEmpty()) {
-	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
+	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+	                .body(Map.of("error", "Invalid credentials", "message", "User not found"));
 	    }
 
 	    User u = userOpt.get();
 
 	    // Validate password
 	    if (!passwordEncoder.matches(user.getPassword(), u.getPassword())) {
-	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials.");
+	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+	                .body(Map.of("error", "Invalid credentials", "message", "Incorrect password"));
 	    }
+
+	    // Generate JWT Token
+	    String token = jwtUtil.generateToken(u.getEmail());
 
 	    // Authentication successful, map user to UserRespDto
 	    UserRespDto userResponse = modelMapper.map(u, UserRespDto.class);
 
-	    return ResponseEntity.ok(userResponse);
+	    // Return JSON response with token, role, and user details
+	    Map<String, Object> response = new HashMap<>();
+	    response.put("message", "Login successful");
+	    response.put("token", token); // JWT token for authentication
+	    response.put("role", u.getRole()); // Ensure role is included
+	    response.put("user", userResponse);
+
+	    return ResponseEntity.ok(response);
 	}
+
+
 	
 	@Override
 	public ResponseEntity<?> updateUser(Long userId, UserReqDto updatedUser) {

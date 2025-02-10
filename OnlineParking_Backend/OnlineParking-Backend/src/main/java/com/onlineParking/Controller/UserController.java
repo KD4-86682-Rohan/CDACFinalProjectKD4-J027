@@ -25,17 +25,21 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@PostMapping("/login")
-	public ResponseEntity<?> Login(@RequestBody UserAuthDto userAuth)
-	{	
-		try {
-			return ResponseEntity.ok(userService.LoginUser(userAuth));
-		} catch (RuntimeException e) {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-					.body(new ApiResponse(e.getMessage()));
-		}
-	}
+//	@PostMapping("/login")
+//	public ResponseEntity<?> Login(@RequestBody UserAuthDto userAuth)
+//	{	
+//		try {
+//			return ResponseEntity.ok(userService.LoginUser(userAuth));
+//		} catch (RuntimeException e) {
+//			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+//					.body(new ApiResponse(e.getMessage()));
+//		}
+//	}
 	
+	@PostMapping("/login")
+	public ResponseEntity<?> Login(@RequestBody UserAuthDto userAuth) {    
+	    return userService.LoginUser(userAuth);
+	}
 	
 	
 	@PostMapping("/register")

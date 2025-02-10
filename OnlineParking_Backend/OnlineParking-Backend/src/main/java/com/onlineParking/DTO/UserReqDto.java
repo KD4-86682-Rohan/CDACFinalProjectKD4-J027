@@ -19,5 +19,5 @@ public class UserReqDto {
 	private Gender gender;
 	private Date dob;
 	private Role role;
-	private String LicenseNumber;
+	private String licenseNumber;
 }
