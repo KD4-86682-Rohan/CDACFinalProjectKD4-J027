@@ -8,7 +8,7 @@ import com.onlineParking.DTO.ParkingLocationReqDto;
 import com.onlineParking.DTO.ParkingLocationRespDto;
 
 public interface ParkingLocationService {
-	List<CityDto> getAllDistinctCities();
+//	List<CityDto> getAllDistinctCities();
 	
 	List<ParkingLocationRespDto> getAllParkingLocations();
 	

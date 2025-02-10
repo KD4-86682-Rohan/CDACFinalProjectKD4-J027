@@ -31,6 +31,7 @@ function App() {
         <Route path='/availableparking' element={<ParkingList />} />
         <Route path='/mybookings' element={<MyBookings />} />
         <Route path='/profile' element={<Profile/>}/>
+        {/* <Route path='' element={<Ven/>}/> */}
       </Routes>
       <ToastContainer />
     </div>
