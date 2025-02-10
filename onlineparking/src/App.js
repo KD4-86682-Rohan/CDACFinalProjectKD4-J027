@@ -26,11 +26,18 @@ function App() {
         <Route path="/about-us" element={<AboutUs/>}/>
         <Route path='/' element={<Home/>} />
         <Route path='/vendorhome' element={<VendorDashboard/>} />
+
         <Route path='/managespaces' element={<ManageSpaces/>} />
 
         <Route path='/availableparking' element={<ParkingList />} />
         <Route path='/mybookings' element={<MyBookings />} />
         <Route path='/profile' element={<Profile/>}/>
+<<<<<<< Updated upstream
+=======
+        {/* <Route path='' element={<Ven/>}/> */}
+
+
+>>>>>>> Stashed changes
       </Routes>
       <ToastContainer />
     </div>
