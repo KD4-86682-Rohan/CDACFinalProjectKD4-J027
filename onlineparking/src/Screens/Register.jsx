@@ -16,7 +16,7 @@ const Register = () => {
   const [gender, setGender] = useState("");
   const [dob, setDob] = useState("");
   const [role, setRole] = useState("");
-  const [LicenseNunmber, setLicenseNumber] = useState("");
+  const [licenseNumber, setLicenseNumber] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
  
@@ -35,8 +35,9 @@ const Register = () => {
       gender,
       dob,
       role,
-      LicenseNunmber,
-    };
+      licenseNumber,  
+   };
+   
     try {
       const response = await admin.register(user);
       console.log("User registered successfully", response.data);
