@@ -46,6 +46,11 @@ public class Bookings extends BaseEntity {
     
     @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT TRUE")
     private boolean BookingStatus;
+    
+    public boolean getBookingStatus()
+    {
+    	return BookingStatus;
+    }
 }
 
 //enum BookingStatus {

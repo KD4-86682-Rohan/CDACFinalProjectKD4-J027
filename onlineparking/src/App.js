@@ -33,12 +33,12 @@ function App() {
         <Route path='/availableparking' element={<ParkingList />} />
         <Route path='/mybookings' element={<MyBookings />} />
         <Route path='/profile' element={<Profile/>}/>
-<<<<<<< Updated upstream
-=======
+{/* <<<<<<< Updated upstream
+======= */}
         {/* <Route path='' element={<Ven/>}/> */}
 
 
->>>>>>> Stashed changes
+{/* >>>>>>> Stashed changes */}
       </Routes>
       <ToastContainer />
     </div>

@@ -12,5 +12,5 @@ public interface SlotAvailabilityService {
 
 	List<ParkingSlotRespDto> findByDate(Long lId, LocalDate date);
 	List<ParkingSlotRespDto> findByParkingSlot(Long lId);
-	ApiResponse addNewSlotAvailability(Long sId, SlotAvailabilityReqDto dto);
+//	ApiResponse addNewSlotAvailability(Long sId, SlotAvailabilityReqDto dto);
 }
