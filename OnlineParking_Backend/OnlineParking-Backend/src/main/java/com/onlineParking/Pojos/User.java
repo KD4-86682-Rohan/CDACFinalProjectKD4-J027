@@ -1,13 +1,6 @@
 package com.onlineParking.Pojos;
 
-import java.sql.Date;
-import java.util.Collection;
-import java.util.List;
-
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
+import java.util.Date;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -28,7 +21,6 @@ public class User extends BaseEntity {//implements UserDetails{
 	private String lastName;
 	@Column(length = 100)
 	private String email;
-	@Column(length = 50)
 	private String password;
 	@Column(name = "phone_number", length = 10)
 	private String phone;

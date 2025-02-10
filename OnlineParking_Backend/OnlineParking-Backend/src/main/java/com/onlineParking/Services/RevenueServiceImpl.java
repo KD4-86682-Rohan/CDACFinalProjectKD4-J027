@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.onlineParking.CustomExceptions.ApiException;
+import com.onlineParking.CustomException.ApiException;
 import com.onlineParking.DTO.RevenueRespDto;
 import com.onlineParking.Dao.ParkingLocationDao;
 import com.onlineParking.Dao.RevenueDao;

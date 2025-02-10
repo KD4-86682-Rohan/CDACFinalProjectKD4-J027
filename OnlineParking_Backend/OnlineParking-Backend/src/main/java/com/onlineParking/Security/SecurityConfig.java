@@ -3,7 +3,6 @@ package com.onlineParking.Security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -17,7 +16,7 @@ public class SecurityConfig {
             .cors().and() // Enable CORS support
             .csrf().disable() // Disable CSRF for simplicity (adjust if needed)
             .authorizeRequests(auth -> auth
-                .requestMatchers("/user/signup", "/user/login", "/user/update/**","/user/preferences/save/**", "/user/matches/find/**").permitAll() // Allow signup and login without authentication
+                .requestMatchers("/User/Register", "/user/login", "/User/update/**").permitAll() // Allow signup and login without authentication
                 .requestMatchers("/user/preferences/matches/**","/messages/conversation" , "/messages/conversations", "/user/**" , "/messages/unreadCount/**","/messages/markAsRead").permitAll()
                 .requestMatchers("/messages/send", "/profile-picture/upload" , "/profile-picture/**","/**","/uploads/profile-pictures/**","/uploads/**").permitAll()
                 .anyRequest().authenticated() // All other routes require authentication

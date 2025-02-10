@@ -9,8 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.onlineParking.CustomExceptions.ApiException;
+import com.onlineParking.CustomException.ApiException;
 import com.onlineParking.DTO.ApiResponse;
 import com.onlineParking.DTO.NotificationReqDto;
 import com.onlineParking.DTO.NotificationRespDto;
