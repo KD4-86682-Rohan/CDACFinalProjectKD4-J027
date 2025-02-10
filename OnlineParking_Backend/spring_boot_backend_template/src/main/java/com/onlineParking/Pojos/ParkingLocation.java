@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name="Parking_Location")
+@Table(name = "Parking_Location")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,8 +22,15 @@ import lombok.ToString;
 public class ParkingLocation extends BaseEntity {
 	private String city;
 	private String area;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "vendor_id", nullable = false) // Foreign Key Column
-    private User vendor;
+	@JoinColumn(name = "vendor_id", nullable = false) // Foreign Key Column
+	private User vendor;
+
+	private boolean status;
+
+	@PrePersist
+	public void prePersist() {
+		this.status = true;
+	}
 }

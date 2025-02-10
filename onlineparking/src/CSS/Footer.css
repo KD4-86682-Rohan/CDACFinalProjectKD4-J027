@@ -4,6 +4,20 @@ footer {
   color: #f8f8f8;
   padding: 40px 0;
   font-family: Arial, sans-serif;
+  width: 100%;
+  margin-top: auto; /* Ensures footer sticks to bottom */
+}
+
+/* Wrapper for flexbox layout */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height */
+}
+
+/* Main container to push footer down */
+.main-content {
+  flex-grow: 1; /* Takes all available space */
 }
 
 /* Footer Container */
@@ -98,4 +112,3 @@ footer {
   font-size: 14px;
   color: #aaa;
 }
-
