@@ -37,7 +37,7 @@
     cursor: pointer;
   }
   
-  .blue-btn {
+  /* .blue-btn { */
 
   .dashboard-nav button {
     display: flex;
@@ -195,4 +195,5 @@
     color: #6f42c1;
 
   }
+}
   
