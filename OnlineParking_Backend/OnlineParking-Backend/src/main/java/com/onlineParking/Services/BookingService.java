@@ -10,8 +10,8 @@ import com.onlineParking.DTO.VendorBookingDto;
 
 public interface BookingService {
 	List<BookingRespDto> getAllBookings(Long userId);
-	List<BookingRespDto> getAllBookingsBYVendor(Long userId);
+	List<BookingRespDto> getAllBookingsByVendor(Long userId);
 	ApiResponse addBooking(Long userId, VendorBookingDto vendorIds, BookingReqDto dto);
 	ApiResponse cancelBooking(Long userId, Long slotId);
-	ApiResponse extendBooking(Long userId, Long slotId, BookingReqDto dto); //update
+	ApiResponse extendBooking(Long userId, Long slotId, BookingReqDto dto); 
 }

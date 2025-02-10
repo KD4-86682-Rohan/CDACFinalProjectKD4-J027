@@ -8,4 +8,5 @@ import lombok.Setter;
 public class ParkingLocationReqDto{
 	private String city;
 	private String area;
+	private String location;
 }

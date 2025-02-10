@@ -12,4 +12,5 @@ import lombok.ToString;
 public class ParkingLocationRespDto extends BaseDto {
 	private String city;
 	private String area;
+	private String location;
 }

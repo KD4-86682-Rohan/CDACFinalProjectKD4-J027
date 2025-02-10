@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.onlineParking.CustomException.ApiException;
+import com.onlineParking.CustomExceptions.ApiException;
 import com.onlineParking.DTO.ApiResponse;
 import com.onlineParking.DTO.BookingReqDto;
 import com.onlineParking.DTO.BookingRespDto;
@@ -48,7 +48,7 @@ public class BookingServiceImpl implements BookingService {
 	
 
 	@Override
-	public List<BookingRespDto> getAllBookingsBYVendor(Long vendorId) {
+	public List<BookingRespDto> getAllBookingsByVendor(Long vendorId) {
 		User vendor = userDao.findById(vendorId).orElseThrow(()->new ApiException("Invalid ID"));
 		if(!vendor.getRole().equals(Role.Vendor)) {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Not a Vendor");
@@ -67,6 +67,7 @@ public class BookingServiceImpl implements BookingService {
 				.collect(Collectors.toList());
 	}
 
+	
 	@Override
 	public ApiResponse addBooking(Long userId, VendorBookingDto vendorIds, BookingReqDto dto) {
 	    User user = userDao.findById(userId).orElseThrow(() -> new ApiException("Invalid Id"));
@@ -124,7 +125,8 @@ public class BookingServiceImpl implements BookingService {
 	    return new ApiResponse("Booking confirmed! Slot ID: " + slot.getId() + ", Booking ID: " + savedBooking.getId());
 	}
 
-
+	
+	
 	@Override
 	public ApiResponse cancelBooking(Long userId, Long bookingId) {
 	    User user = userDao.findById(userId).orElseThrow(() -> new ApiException("Invalid User Id"));
