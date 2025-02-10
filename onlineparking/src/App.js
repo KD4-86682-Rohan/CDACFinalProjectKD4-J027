@@ -11,7 +11,8 @@ import ManageSpaces from './Screens/ManageSpaces';
 import ParkingList from './Screens/AvailableParking';
 import MyBookings from './Screens/MyBokking'
 import Profile from './Screens/Profile';
-
+import ForgotPassword from "./Screens/ForgotPassword";
+import ResetPassword from "./Screens/ResetPassword";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/vendorhome' element={<VendorDashboard/>} />
         <Route path='/managespaces' element={<ManageSpaces/>} />
-
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path='/availableparking' element={<ParkingList />} />
         <Route path='/mybookings' element={<MyBookings />} />
         <Route path='/profile' element={<Profile/>}/>
