@@ -1,78 +1,95 @@
-VendorDashboard.css
+/* Dashboard Container */
 .dashboard-container {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-}
-.dashboard-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-}
-.dashboard-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-.dashboard-nav li {
-  cursor: pointer;
-}
-.logout {
-  color: red;
-}
-.welcome-section {
-  text-align: center;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: #f4f4f4;
+  min-height: 100vh;
 }
-.dashboard-cards {
+
+/* Title */
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* Buttons */
+.dashboard-buttons {
   display: flex;
-  justify-content: space-around;
-  margin: 20px 0;
+  gap: 12px;
+  margin-bottom: 20px;
 }
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 30%;
-}
-.card button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
+
+.btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-.statistics-section {
-  display: flex;
-  justify-content: space-around;
-  background-color: #f1f1f1;
-  padding: 20px;
-  margin: 20px 0;
-}
-.stat {
-  text-align: center;
-}
-.dashboard-footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #343a40;
+
+.blue-btn {
+  background-color: #2563eb;
   color: white;
 }
-.dashboard-footer h4 {
-  margin-bottom: 10px;
+
+.gray-btn {
+  background-color: #e5e7eb;
+  color: black;
 }
-.dashboard-footer ul {
-  list-style: none;
-  padding: 0;
+
+.btn:hover {
+  opacity: 0.9;
 }
-.dashboard-footer ul li {
-  margin-bottom: 5px;
+
+/* Cards Layout */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* Individual Card */
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.number {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.blue {
+  color: #2563eb;
+}
+
+.green {
+  color: #22c55e;
+}
+
+.purple {
+  color: #9333ea;
+}
+
+.orange {
+  color: #f97316;
+}
+
+.icon {
+  font-size: 24px;
 }

@@ -35,6 +35,10 @@ function App() {
         <Route path='/availableparking' element={<ParkingList />} />
         <Route path='/mybookings' element={<MyBookings />} />
         <Route path='/profile' element={<Profile/>}/>
+        {/* <Route path='' element={<Ven/>}/> */}
+{/* ======= */}
+{/* <<<<<<< Updated upstream */}
+{/* ======= */}
         <Route path="/vendor-parking" element={<ParkingSpaces />} />
         <Route path="/vendor-account" element={<VendorAccount />} />
 
@@ -42,6 +46,8 @@ function App() {
 
 
 {/* >>>>>>> Stashed changes */}
+{/* >>>>>>> caab4336dab92430f4672398c9d31ff8c3c15003 */} */
+
       </Routes>
       <ToastContainer />
     </div>

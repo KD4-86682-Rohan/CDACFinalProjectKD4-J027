@@ -233,11 +233,7 @@ public class BookingServiceImpl implements BookingService {
 	    revenueDao.save(revenue);
 
 	    return new ApiResponse("Booking confirmed! Total Price: $" + totalPrice);
-	}
-
-
-
-	
+	}	
 	
 //	@Override
 //	public ApiResponse cancelBooking(Long userId, Long bookingId) {
@@ -288,6 +284,7 @@ public class BookingServiceImpl implements BookingService {
 //	    return new ApiResponse("Booking successfully canceled and revenue updated.");
 //	}
 	
+
 	@Override
 	public ApiResponse cancelBooking(Long userId, Long bookingId) {
 	    User user = userDao.findById(userId).orElseThrow(() -> new ApiException("Invalid User ID"));

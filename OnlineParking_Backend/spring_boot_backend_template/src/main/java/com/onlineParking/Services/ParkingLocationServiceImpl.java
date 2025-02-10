@@ -82,17 +82,17 @@ public class ParkingLocationServiceImpl implements ParkingLocationService {
 		
 	}
 
-	  @Override
-	    public List<CityDto> getAllDistinctCities() {
-	        // Define a TypeMap for String to CityDto conversion
-	        TypeMap<String, CityDto> typeMap = modelMapper.typeMap(String.class, CityDto.class);
-	        typeMap.addMapping(cityName -> cityName, CityDto::setCity);
-
-	        // Retrieve distinct city names and map them to CityDto
-	        return parkingLocationDao.findDistinctCities()
-	            .stream()
-	            .map(cityName -> modelMapper.map(cityName, CityDto.class))
-	            .collect(Collectors.toList());
-	    }
+//	  @Override
+//	    public List<CityDto> getAllDistinctCities() {
+//	        // Define a TypeMap for String to CityDto conversion
+//	        TypeMap<String, CityDto> typeMap = modelMapper.typeMap(String.class, CityDto.class);
+//	        typeMap.addMapping(cityName -> cityName, CityDto::setCity);
+//
+//	        // Retrieve distinct city names and map them to CityDto
+//	        return parkingLocationDao.findDistinctCities()
+//	            .stream()
+//	            .map(cityName -> modelMapper.map(cityName, CityDto.class))
+//	            .collect(Collectors.toList());
+//	    }
 
 }
