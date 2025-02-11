@@ -20,6 +20,7 @@ const ManageParkingSpaces = () => {
         </button>
       </div> */}
 
+
       <div className="dashboard-cards">
         <div className="card">
           <h3>Total Spaces</h3>
@@ -52,6 +53,7 @@ const ManageParkingSpaces = () => {
     </div>
     <Footer/>
     </div>
+
   );
 };
 

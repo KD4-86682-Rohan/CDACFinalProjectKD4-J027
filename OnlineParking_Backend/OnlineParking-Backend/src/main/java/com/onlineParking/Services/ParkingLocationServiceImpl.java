@@ -4,11 +4,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.onlineParking.DTO.ApiResponse;
+import com.onlineParking.DTO.CityDto;
 import com.onlineParking.DTO.ParkingLocationReqDto;
 import com.onlineParking.DTO.ParkingLocationRespDto;
 import com.onlineParking.Dao.ParkingLocationDao;
@@ -79,5 +82,18 @@ public class ParkingLocationServiceImpl implements ParkingLocationService {
 		return new ApiResponse("location not Updated");
 		
 	}
+
+	  @Override
+	    public List<CityDto> getAllDistinctCities() {
+	        // Define a TypeMap for String to CityDto conversion
+	        TypeMap<String, CityDto> typeMap = modelMapper.typeMap(String.class, CityDto.class);
+	        typeMap.addMapping(cityName -> cityName, CityDto::setCity);
+
+	        // Retrieve distinct city names and map them to CityDto
+	        return parkingLocationDao.findDistinctCities()
+	            .stream()
+	            .map(cityName -> modelMapper.map(cityName, CityDto.class))
+	            .collect(Collectors.toList());
+	    }
 
 }

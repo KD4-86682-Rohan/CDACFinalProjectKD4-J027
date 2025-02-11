@@ -22,6 +22,7 @@ import lombok.ToString;
 public class ParkingLocation extends BaseEntity {
 	private String city;
 	private String area;
+	private String location;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "vendor_id", nullable = false) // Foreign Key Column

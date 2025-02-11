@@ -1,6 +1,7 @@
 package com.onlineParking.Services;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.onlineParking.CustomExceptions.ApiException;
 import com.onlineParking.DTO.ApiResponse;
 import com.onlineParking.DTO.ParkingSlotRespDto;
 import com.onlineParking.DTO.SlotAvailabilityReqDto;
@@ -37,25 +39,44 @@ public class SlotAvailabilityServiceImpl implements SlotAvailabilityService {
 	@Autowired
 	private SlotAvailabilityDao availabilityDao;
 	
+//	@Override
+//	public List<ParkingSlotRespDto> findByDate(Long lId, LocalDate date) {
+//	    ParkingLocation parkingLocation = locationDao.findById(lId)
+//	            .orElseThrow(() -> new RuntimeException("Invalid Location Id"));
+//
+//	    List<ParkingSlotRespDto> availableSlots = parkingSlotDao.findByLocation(parkingLocation).stream()
+//	            .filter(slot -> slot.isStatus() && isSlotAvailable(slot, date))
+//	            .map(slot -> modelMapper.map(slot, ParkingSlotRespDto.class))
+//	            .collect(Collectors.toList());
+//
+//	    return availableSlots;
+//	}
+	
 	@Override
 	public List<ParkingSlotRespDto> findByDate(Long lId, LocalDate date) {
 	    ParkingLocation parkingLocation = locationDao.findById(lId)
 	            .orElseThrow(() -> new RuntimeException("Invalid Location Id"));
 
 	    List<ParkingSlotRespDto> availableSlots = parkingSlotDao.findByLocation(parkingLocation).stream()
-	            .filter(slot -> slot.isStatus() && isSlotAvailable(slot, date))
+	            .filter(slot -> slot.isStatus() && isSlotAvailableForDate(slot, date))
 	            .map(slot -> modelMapper.map(slot, ParkingSlotRespDto.class))
 	            .collect(Collectors.toList());
 
 	    return availableSlots;
 	}
 
-
-	// Helper method to check if the slot is available on the given date
-
-	private boolean isSlotAvailable(ParkingSlots slot, LocalDate date) {
+	// ✅ **Helper method to check if a slot is available on a specific date**
+	private boolean isSlotAvailableForDate(ParkingSlots slot, LocalDate date) {
 	    return availabilityDao.findBySlotAndDateAndIsBookedFalse(slot, date).isEmpty();
 	}
+
+
+
+//	// Helper method to check if the slot is available on the given date
+//
+//	private boolean isSlotAvailable(ParkingSlots slot, LocalDate date) {
+//	    return availabilityDao.findBySlotAndDateAndIsBookedFalse(slot, date).isEmpty();
+//	}
 	
 
 	@Override
@@ -98,20 +119,31 @@ public class SlotAvailabilityServiceImpl implements SlotAvailabilityService {
 //	}
 
 
-	@Override
-	public ApiResponse addNewSlotAvailability(Long sId, SlotAvailabilityReqDto dto) {
-		ParkingSlots parkingSlots = parkingSlotDao.findById(sId)
-				.orElseThrow(() -> new RuntimeException("Invalid Id"));
-		if(!parkingSlots.isStatus())
-		{
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Slot found");
+//	@Override
+//	public ApiResponse addNewSlotAvailability(Long sId, SlotAvailabilityReqDto dto) {
+//		ParkingSlots parkingSlots = parkingSlotDao.findById(sId)
+//				.orElseThrow(() -> new RuntimeException("Invalid Id"));
+//		if(!parkingSlots.isStatus())
+//		{
+//			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Slot found");
+//
+//		}
+//		SlotAvailability slotAvailability = modelMapper.map(dto, SlotAvailability.class);
+//		slotAvailability.setSlot(parkingSlots);
+//		availabilityDao.save(slotAvailability);
+//		return new ApiResponse("New Parking slot Availability added");
+//	}
+	
+	public boolean isSlotAvailableForTime(Long slotId, LocalDate date, LocalTime startTime, LocalTime endTime) {
+	    ParkingSlots slot = parkingSlotDao.findById(slotId)
+	        .orElseThrow(() -> new ApiException("Invalid Slot ID"));
 
-		}
-		SlotAvailability slotAvailability = modelMapper.map(dto, SlotAvailability.class);
-		slotAvailability.setSlot(parkingSlots);
-		availabilityDao.save(slotAvailability);
-		return new ApiResponse("New Parking slot Availability added");
+	    List<SlotAvailability> availabilities = availabilityDao.findBySlotAndDate(slot, date);
+	    
+	    return availabilities.stream()
+	        .anyMatch(sa -> !sa.getIsBooked() && sa.getStartTime().equals(startTime) && sa.getEndTime().equals(endTime));
 	}
+
 
 	
 }

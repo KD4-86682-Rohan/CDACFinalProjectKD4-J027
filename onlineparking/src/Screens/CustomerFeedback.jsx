@@ -1,6 +1,8 @@
 import React from "react";
 import "../CSS/CustomerFeedback.css";
+
 import Footer from "../Components/Footer";
+
 
 const CustomerFeedback = () => {
   const feedbacks = [
@@ -52,6 +54,10 @@ const CustomerFeedback = () => {
         </div> */}
       {/* </div> */}
 
+        </div>
+      </div>
+
+
       <div className="feedback-section">
         <h3>Recent Feedback</h3>
         {feedbacks.map((feedback, index) => (
@@ -66,7 +72,9 @@ const CustomerFeedback = () => {
         ))}
         <a href="#" className="view-all">View All Feedback</a>
       </div>
+
       <Footer/>
+
     </div>
   );
 };

@@ -5,8 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,17 +25,21 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@PostMapping("/login")
-	public ResponseEntity<?> Login(@RequestBody UserAuthDto userAuth)
-	{	
-		try {
-			return ResponseEntity.ok(userService.LoginUser(userAuth));
-		} catch (RuntimeException e) {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-					.body(new ApiResponse(e.getMessage()));
-		}
-	}
+//	@PostMapping("/login")
+//	public ResponseEntity<?> Login(@RequestBody UserAuthDto userAuth)
+//	{	
+//		try {
+//			return ResponseEntity.ok(userService.LoginUser(userAuth));
+//		} catch (RuntimeException e) {
+//			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+//					.body(new ApiResponse(e.getMessage()));
+//		}
+//	}
 	
+	@PostMapping("/login")
+	public ResponseEntity<?> Login(@RequestBody UserAuthDto userAuth) {    
+	    return userService.LoginUser(userAuth);
+	}
 	
 	
 	@PostMapping("/register")
