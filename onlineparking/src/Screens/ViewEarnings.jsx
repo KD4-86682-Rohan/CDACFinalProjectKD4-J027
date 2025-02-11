@@ -1,21 +1,20 @@
 import React from "react";
 import "../CSS/ViewEarnings.css";
 import Footer from "../Components/Footer";
-import VendorNavbar from "../Components/VendorNavbar";
 
 const ViewEarnings = () => {
   return (
     <div>
-      <VendorNavbar />
+     
       <div className="dashboard-container">
         <h2 className="dashboard-title">Dashboard Overview</h2>
 
-        {/* Buttons */}
+        {/* Buttons
         <div className="dashboard-buttons">
           <button className="btn gray-btn">🅿 Manage Parking Spaces</button>
           <button className="btn blue-btn">📊 View Earnings</button>
           <button className="btn gray-btn">💬 Customer Feedback</button>
-        </div>
+        </div> */}
 
         {/* Stats Cards */}
         <div className="dashboard-cards">

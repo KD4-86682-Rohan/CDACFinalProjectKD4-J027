@@ -65,72 +65,145 @@
 
 // export default VendorDashboard;
 
-import React from "react";
-import "../CSS/VendorHome.css"; // Include CSS for styling
-import Footer from "../Components/Footer";
-// import AdminNavbar from "../Components/AdminNavbar";
+// import React from "react";
+// import "../CSS/VendorHome.css"; // Include CSS for styling
+// import Footer from "../Components/Footer";
+// // import AdminNavbar from "../Components/AdminNavbar";
+// import VendorNavbar from "../Components/VendorNavbar";
+// import { Link } from "react-router-dom";
+
+// const VendorDashboard = () => {
+//   return (
+//     <div>
+//       <VendorNavbar/>
+//       {/* <AdminNavbar /> */}
+//       <div className="dashboard-container">
+//       <h2 className="dashboard-title">Dashboard Overview</h2>
+
+//       {/* Buttons */}
+//       <div className="dashboard-buttons">
+//       <Link to="/manage-parking" className="btn blue-btn">🅿 Manage Parking Spaces</Link>
+//         <Link to="/view-earnings" className="btn gray-btn">📊 View Earnings</Link>
+//           <Link to="/customer-feedback" className="btn gray-btn">💬 Customer Feedback</Link>
+//       </div>
+
+//       {/* Stats Cards */}
+//       <div className="dashboard-cards">
+//         {/* Total Spaces */}
+//         <div className="card">
+//           <h3>Total Spaces</h3>
+//           <div className="card-content">
+//             <span className="number blue">50</span>
+//             <span className="icon">🅿</span>
+//           </div>
+//           <p>Total Available Capacity</p>
+//         </div>
+
+//         {/* Occupied Spaces */}
+//         <div className="card">
+//           <h3>Occupied Spaces</h3>
+//           <div className="card-content">
+//             <span className="number green">35</span>
+//             <span className="icon">🚗</span>
+//           </div>
+//           <p>Current Occupancy</p>
+//         </div>
+
+//         {/* Daily Bookings */}
+//         <div className="card">
+//           <h3>Daily Bookings</h3>
+//           <div className="card-content">
+//             <span className="number purple">42</span>
+//             <span className="icon">📋</span>
+//           </div>
+//           <p>Today's Total Bookings</p>
+//         </div>
+
+//         {/* Occupancy Rate */}
+//         <div className="card">
+//           <h3>Occupancy Rate</h3>
+//           <div className="card-content">
+//             <span className="number orange">70%</span>
+//             <span className="icon">📈</span>
+//           </div>
+//           <p>Average Daily Rate</p>
+//         </div>
+//       </div>
+//     </div>
+//     <Footer />
+//     </div>
+//   );
+// };
+
+// export default VendorDashboard;
+
+
+
+import React, { useState } from "react";
+import "../CSS/VendorDashboard.css";
+// import ManageParkingSpaces from "../Screens/ManageParkingSpaces";
+import ManageParkingSpaces from "../Screens/ManageParkingSpaces";
+import ViewEarnings from "../Screens/ViewEarnings";
+import CustomerFeedback from "../Screens/CustomerFeedback";
 import VendorNavbar from "../Components/VendorNavbar";
-import { Link } from "react-router-dom";
 
 const VendorDashboard = () => {
+  const [activeTab, setActiveTab] = useState("manage");
+
   return (
     <div>
       <VendorNavbar/>
-      {/* <AdminNavbar /> */}
-      <div className="dashboard-container">
-      <h2 className="dashboard-title">Dashboard Overview</h2>
+    
+    <div className="vendor-dashboard">
+      {/* <nav className="dashboard-nav">
+        <button
+          className={activeTab === "manage" ? "active" : ""}
+          onClick={() => setActiveTab("manage")}
+        >
+          🚗 Manage Parking Spaces
+        </button>
+        <button
+          className={activeTab === "earnings" ? "active" : ""}
+          onClick={() => setActiveTab("earnings")}
+        >
+          💰 View Earnings
+        </button>
+        <button
+          className={activeTab === "feedback" ? "active" : ""}
+          onClick={() => setActiveTab("feedback")}
+        >
+          💬 Customer Feedback
+        </button>
+      </nav> */}
 
-      {/* Buttons */}
-      <div className="dashboard-buttons">
-      <Link to="/manage-parking" className="btn blue-btn">🅿 Manage Parking Spaces</Link>
-        <Link to="/view-earnings" className="btn gray-btn">📊 View Earnings</Link>
-          <Link to="/customer-feedback" className="btn gray-btn">💬 Customer Feedback</Link>
-      </div>
+<nav className="dashboard-nav" style={{ marginTop: "20px" }}>
+  <button
+    className={activeTab === "manage" ? "active" : ""}
+    onClick={() => setActiveTab("manage")}
+  >
+    🚗 Manage Parking Spaces
+  </button>
+  <button
+    className={activeTab === "earnings" ? "active" : ""}
+    onClick={() => setActiveTab("earnings")}
+  >
+    💰 View Earnings
+  </button>
+  <button
+    className={activeTab === "feedback" ? "active" : ""}
+    onClick={() => setActiveTab("feedback")}
+  >
+    💬 Customer Feedback
+  </button>
+</nav>
 
-      {/* Stats Cards */}
-      <div className="dashboard-cards">
-        {/* Total Spaces */}
-        <div className="card">
-          <h3>Total Spaces</h3>
-          <div className="card-content">
-            <span className="number blue">50</span>
-            <span className="icon">🅿</span>
-          </div>
-          <p>Total Available Capacity</p>
-        </div>
 
-        {/* Occupied Spaces */}
-        <div className="card">
-          <h3>Occupied Spaces</h3>
-          <div className="card-content">
-            <span className="number green">35</span>
-            <span className="icon">🚗</span>
-          </div>
-          <p>Current Occupancy</p>
-        </div>
-
-        {/* Daily Bookings */}
-        <div className="card">
-          <h3>Daily Bookings</h3>
-          <div className="card-content">
-            <span className="number purple">42</span>
-            <span className="icon">📋</span>
-          </div>
-          <p>Today's Total Bookings</p>
-        </div>
-
-        {/* Occupancy Rate */}
-        <div className="card">
-          <h3>Occupancy Rate</h3>
-          <div className="card-content">
-            <span className="number orange">70%</span>
-            <span className="icon">📈</span>
-          </div>
-          <p>Average Daily Rate</p>
-        </div>
+      <div className="dashboard-content">
+        {activeTab === "manage" && <ManageParkingSpaces />}
+        {activeTab === "earnings" && <ViewEarnings />}
+        {activeTab === "feedback" && <CustomerFeedback />}
       </div>
     </div>
-    <Footer />
     </div>
   );
 };
