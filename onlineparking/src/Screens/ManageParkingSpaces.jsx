@@ -1,10 +1,25 @@
 import React from "react";
 import "../CSS/ManageParkingSpaces.css";
-
+import Footer from "../Components/Footer";
 const ManageParkingSpaces = () => {
   return (
+    <div>
+       
     <div className="manage-parking">
-      {/* <h2 className="dashboard-title">Dashboard Overview</h2> */}
+      <h2 className="dashboard-title">Dashboard Overview</h2>
+
+      {/* <div className="dashboard-nav">
+        <button className="active">
+          🅿 Manage Parking Spaces
+        </button>
+        <button>
+          📊 View Earnings
+        </button>
+        <button>
+          💬 Customer Feedback
+        </button>
+      </div> */}
+
 
       <div className="dashboard-cards">
         <div className="card">
@@ -36,6 +51,9 @@ const ManageParkingSpaces = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </div>
+
   );
 };
 

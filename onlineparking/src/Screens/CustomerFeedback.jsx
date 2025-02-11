@@ -1,6 +1,9 @@
 import React from "react";
 import "../CSS/CustomerFeedback.css";
 
+import Footer from "../Components/Footer";
+
+
 const CustomerFeedback = () => {
   const feedbacks = [
     {
@@ -29,7 +32,14 @@ const CustomerFeedback = () => {
 
   return (
     <div className="customer-feedback">
-             
+      <h2 className="dashboard-title">Dashboard Overview</h2>
+
+      {/* <div className="dashboard-nav">
+        <button>🅿 Manage Parking Spaces</button>
+        <button>💵 View Earnings</button>
+        <button className="active">💬 Customer Feedback</button>
+      </div>
+
       <div className="dashboard-cards">
         <div className="card">
           <h3>Total Feedbacks</h3>
@@ -41,8 +51,12 @@ const CustomerFeedback = () => {
           <h3>Average Rating</h3>
           <span className="card-value">4.5/5.0</span>
           <span className="stars">⭐⭐⭐⭐⭐</span>
+        </div> */}
+      {/* </div> */}
+
         </div>
       </div>
+
 
       <div className="feedback-section">
         <h3>Recent Feedback</h3>
@@ -58,6 +72,9 @@ const CustomerFeedback = () => {
         ))}
         <a href="#" className="view-all">View All Feedback</a>
       </div>
+
+      <Footer/>
+
     </div>
   );
 };

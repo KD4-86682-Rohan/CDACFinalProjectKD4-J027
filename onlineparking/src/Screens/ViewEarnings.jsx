@@ -154,18 +154,35 @@
 
 import React from "react";
 import "../CSS/ViewEarnings.css";
+import Footer from "../Components/Footer";
 
 const ViewEarnings = () => {
   return (
-    <div className="view-earnings">
+    <div>
+     
+      <div className="dashboard-container">
+        <h2 className="dashboard-title">Dashboard Overview</h2>
 
-      <div className="dashboard-cards">
-        <div className="card">
-          <h3>Today's Earnings</h3>
-          <span className="card-value green">$1250</span>
-          <p>Daily Revenue</p>
-          <span className="card-icon">💵</span>
-        </div>
+        {/* Buttons
+        <div className="dashboard-buttons">
+          <button className="btn gray-btn">🅿 Manage Parking Spaces</button>
+          <button className="btn blue-btn">📊 View Earnings</button>
+          <button className="btn gray-btn">💬 Customer Feedback</button>
+        </div> */}
+
+
+// const ViewEarnings = () => {
+//   return (
+//     <div className="view-earnings">
+
+//       <div className="dashboard-cards">
+//         <div className="card">
+//           <h3>Today's Earnings</h3>
+//           <span className="card-value green">$1250</span>
+//           <p>Daily Revenue</p>
+//           <span className="card-icon">💵</span>
+//         </div>
+
 
         <div className="card">
           <h3>Monthly Earnings</h3>
