@@ -10,5 +10,5 @@ public interface UserService {
 
 	String registerUser(User user);
 
-	User loginUser(UserAuthDto user);
+	User loginUser(String email);
 }

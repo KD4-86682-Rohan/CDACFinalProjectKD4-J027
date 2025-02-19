@@ -1,4 +1,4 @@
-package com.onlineParking.security;
+package com.onlineParking.Security;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,8 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.onlineParking.Pojos.User;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Collections;
 
 @Getter
 @Setter
@@ -24,20 +23,17 @@ public class UserDetail implements UserDetails {
     private String password;
     private Collection<GrantedAuthority> authorities;
 
-    public static UserDetails buildUserDetails(User user){
-        List<GrantedAuthority> authorities = user.getRole();
-                .stream()
-                .map(role -> new SimpleGrantedAuthority(role.getName()))
-                .collect(Collectors.toList());
-        return new UserDetails(
+    public static UserDetail buildUserDetails(User user) {
+        // Assuming getRole() returns a single Enum, not a collection
+        GrantedAuthority authority = new SimpleGrantedAuthority(user.getRole().name());
+
+        return new UserDetail(
                 user.getId(),
                 user.getEmail(),
                 user.getPassword(),
-                authorities);
-
+                Collections.singletonList(authority) // Wrapping in a list
+        );
     }
-
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

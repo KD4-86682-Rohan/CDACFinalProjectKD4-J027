@@ -1,7 +1,10 @@
 package com.onlineParking.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,14 +12,16 @@ import com.onlineParking.CustomExceptions.ApiException;
 import com.onlineParking.DTO.UserAuthDto;
 import com.onlineParking.Dao.UserDao;
 import com.onlineParking.Pojos.User;
+import com.onlineParking.Security.UserDetail;
 
 import io.jsonwebtoken.io.IOException;
-import io.swagger.v3.oas.models.responses.ApiResponse;
 @Service
 @Transactional
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService,UserDetailsService {
 	
-
+	@Autowired
+	@Lazy
+	private PasswordEncoder passwordEncoder;
 	
 	@Autowired
 	private UserDao userDao;
@@ -34,6 +39,13 @@ public class UserServiceImpl implements UserService {
 			return dbUser;
 		return null;
 	}
+	
+	 @Override
+	    public UserDetail loadUserByUsername(String email) throws UsernameNotFoundException {
+	        User user = userDao.findByEmail(email)
+	                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+	        return UserDetail.buildUserDetails(user);
+	    }
 
 	@Override
 	public String registerUser(User user){
@@ -43,7 +55,10 @@ public class UserServiceImpl implements UserService {
 	            return "Email already exists!";
 	        }
 
-	        
+	        // Encode the password
+	        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+	        // Save the user to the database
 	        userDao.save(user);
 
 	        return "User registered successfully!";
@@ -52,11 +67,15 @@ public class UserServiceImpl implements UserService {
 	    }
 	}
 
+
+
+
+
+
 	@Override
-	public User loginUser(UserAuthDto user) {
-		return userDao.findByEmailAndPassword(user.getEmail(), user.getPassword())
+	public User loginUser(String email) {
+		return userDao.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-		
 	}
 	
 

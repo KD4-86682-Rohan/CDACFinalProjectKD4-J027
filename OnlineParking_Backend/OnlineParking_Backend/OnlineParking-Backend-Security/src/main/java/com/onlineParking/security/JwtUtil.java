@@ -1,8 +1,9 @@
-package com.onlineParking.security;
+package com.onlineParking.Security;
 
-import io.jsonwebtoken.*;
-import io.jsonwebtoken.io.Decoders;
-import io.jsonwebtoken.security.Keys;
+import java.security.Key;
+import java.util.Date;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,13 +11,19 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
-import java.security.Key;
-import java.util.Date;
-import java.util.List;
+import com.onlineParking.Pojos.User;
+
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.UnsupportedJwtException;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JwtUtil {
-    private static final Logger logger = LoggerFactory.getLogger(JwtUtil.class);
+	private static final Logger logger = LoggerFactory.getLogger(JwtUtil.class);
 
     @Value("${auth.token.jwtSecret}")
     private String jwtSecret;
@@ -25,12 +32,12 @@ public class JwtUtil {
     private int jwtExpirationMs;
 
     public String generateJwtTokenForUser(Authentication authentication){
-        UserDetails userPrincipal = (UserDetails) authentication.getPrincipal();
-        List<String> roles = userPrincipal.getAuthorities()
+        User user = (User) authentication.getPrincipal();
+        List<String> roles = user.getAuthorities()
                 .stream()
                 .map(GrantedAuthority::getAuthority).toList();
         return Jwts.builder()
-                .setSubject(userPrincipal.getUsername())
+                .setSubject(user.getUsername())
                 .claim("roles", roles)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime()+jwtExpirationMs))
@@ -61,4 +68,5 @@ public class JwtUtil {
         }
         return false; // Return false for all invalid cases
     }
+
 }
