@@ -1,0 +1,176 @@
+/* General Styles */
+.dashboard-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f7f9fc;
+}
+
+.view-earnings {
+  width: 100%;
+  padding: 20px;
+  background-color: #eef3f1;
+}
+
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Dashboard Navigation */
+.dashboard-nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-nav button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-nav button:hover {
+  background-color: #d9d9d9;
+}
+
+.dashboard-nav .active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.gray-btn {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+.blue-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 250px;
+  position: relative;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.card-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 12px;
+  color: #666;
+}
+
+.card-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+}
+
+/* Earnings Statistics */
+.earnings-statistics {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.stats-card {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  min-width: 250px;
+}
+
+.stats-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Colors */
+.green {
+  color: #28a745;
+}
+
+.blue {
+  color: #007bff;
+}
+
+.purple {
+  color: #6f42c1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .dashboard-cards,
+  .earnings-statistics {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .card,
+  .stats-card {
+      width: 100%;
+      max-width: 400px;
+  }
+}

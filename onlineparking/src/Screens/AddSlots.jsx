@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { addParkingSlot } from "../services/api";
+import VendorNavbar from "../Components/VendorNavbar";
+import { useNavigate } from "react-router-dom";
 
 const AddSlotForm = ({ locationId }) => {
   const [slotNumber, setSlotNumber] = useState("");
@@ -10,6 +12,7 @@ const AddSlotForm = ({ locationId }) => {
   const [pricePerHour4W, setPricePerHour4W] = useState("");
   const [slotStatus, setSlotStatus] = useState("AVAILABLE");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,6 +27,7 @@ const AddSlotForm = ({ locationId }) => {
     try {
       const response = await addParkingSlot(locationId, slotData);
       setMessage(response.data.message);
+      navigate("/managespaces");
     } catch (error) {
       setMessage("Error: " + error.response.data.message);
     }
@@ -31,6 +35,7 @@ const AddSlotForm = ({ locationId }) => {
 
   return (
     <div>
+      <VendorNavbar />
       <h2>Add New Parking Slot</h2>
       <form onSubmit={handleSubmit}>
         <div>

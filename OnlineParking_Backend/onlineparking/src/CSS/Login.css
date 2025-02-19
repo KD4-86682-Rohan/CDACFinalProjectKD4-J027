@@ -1,0 +1,190 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9fafb;
+  }
+  
+  .login-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .login-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .login-illustration {
+    display: none;
+    background-color: #ebf8ff;
+    padding: 32px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (min-width: 768px) {
+    .login-illustration {
+      display: flex;
+    }
+  }
+  
+  .login-illustration img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .login-form {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    color: #4a5568;
+  }
+  
+  .login-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .login-form p {
+    font-size: 14px;
+    margin-bottom: 24px;
+    color: #718096;
+  }
+  
+  .input-group {
+    margin-bottom: 16px;
+  }
+  
+  .input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .input-group input:focus {
+    outline: none;
+    border-color: #63b3ed;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.6);
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .options a {
+    color: #3182ce;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .options a:hover {
+    text-decoration: underline;
+  }
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-group {
+      flex-direction: row;
+    }
+  }
+  
+  button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .login-btn {
+    background-color: #3182ce;
+    color: #fff;
+  }
+  
+  .login-btn:hover {
+    background-color: #2b6cb0;
+  }
+  
+  .create-account-btn {
+    background-color: #edf2f7;
+    color: #4a5568;
+  }
+  
+  .create-account-btn:hover {
+    background-color: #e2e8f0;
+  }
+  
+  .social-text {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: #718096;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #edf2f7;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a5568;
+  }
+  
+  .social-btn:hover {
+    background-color: #e2e8f0;
+  }
+  
+  .social-btn.google {
+    color: #ea4335;
+  }
+  
+  .social-btn.facebook {
+    color: #1877f2;
+  }
+  
+  .social-btn.twitter {
+    color: #1da1f2;
+  }
+  
+  

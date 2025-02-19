@@ -28,14 +28,14 @@ const VendorNavbar = () => {
       <div className="navbar-logo">QuickPark</div>
       <div className="navbar-links">
         <Link to="/vendorhome" className="navbar-button">Dashboard</Link>
-        <Link to="/my-parking-spaces" className="navbar-button">My Parking Spaces</Link>
+        <Link to="/managespaces" className="navbar-button">My Parking Spaces</Link>
         {/* <Link to="/view-earnings" className="navbar-button">View Earnings</Link> */}
         {/* <Link to="/customer-feedback" className="navbar-button">Customer Feedback</Link> */}
         <Link to="/account" className="navbar-button">Account</Link>
         <Link to="/settings" className="navbar-button">Settings</Link>
         <Link to="/login" className="navbar-button logout">Logout</Link>
 
-//       <div className="navbar-logo">Vendor Admin</div>
+{/* //       <div className="navbar-logo">Vendor Admin</div>
 //       <div className="navbar-links">
 //         <Link to="/dashboard">
 //           <button className="navbar-button">Dashboard</button>
@@ -51,7 +51,7 @@ const VendorNavbar = () => {
 //         </Link>
 //         <Link to="/logout">
 //           <button className="navbar-button logout">Logout</button>
-//         </Link>
+//         </Link> */}
 
       </div>
     </nav>

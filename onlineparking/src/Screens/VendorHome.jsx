@@ -142,12 +142,10 @@
 
 import React, { useState } from "react";
 import "../CSS/VendorDashboard.css";
-// import ManageParkingSpaces from "../Screens/ManageParkingSpaces";
+import "../CSS/VendorHome.css";
 import ManageParkingSpaces from "../Screens/ManageParkingSpaces";
 import ViewEarnings from "../Screens/ViewEarnings";
-import CustomerFeedback from "../Screens/CustomerFeedback";
-import React from "react";
-// import "../CSS/VendorHome.css"; 
+import CustomerFeedback from "../Screens/CustomerFeedback"; 
 import Footer from "../Components/Footer";
 import VendorNavbar from "../Components/VendorNavbar";
 
@@ -208,6 +206,7 @@ const VendorDashboard = () => {
         {activeTab === "feedback" && <CustomerFeedback />}
       </div>
     </div>
+    {/* <Footer /> */}
     </div>
   );
 };

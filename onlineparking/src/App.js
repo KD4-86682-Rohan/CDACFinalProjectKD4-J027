@@ -15,6 +15,8 @@ import ForgotPassword from "./Screens/ForgotPassword";
 import ResetPassword from "./Screens/ResetPassword";
 import ParkingSpaces from "./Screens/ParkingSpaces";
 import VendorAccount from "./Screens/VendorAccount";
+import AddLocationForm from "./Screens/AddLocation";
+import AddSlotForm from "./Screens/AddSlots";
 
 function App() {
   return (
@@ -35,18 +37,10 @@ function App() {
         <Route path='/availableparking' element={<ParkingList />} />
         <Route path='/mybookings' element={<MyBookings />} />
         <Route path='/profile' element={<Profile/>}/>
-        {/* <Route path='' element={<Ven/>}/> */}
-{/* ======= */}
-{/* <<<<<<< Updated upstream */}
-{/* ======= */}
         <Route path="/vendor-parking" element={<ParkingSpaces />} />
         <Route path="/vendor-account" element={<VendorAccount />} />
-
-        {/* <Route path='' element={<Ven/>}/> */}
-
-
-{/* >>>>>>> Stashed changes */}
-{/* >>>>>>> caab4336dab92430f4672398c9d31ff8c3c15003 */} */
+        <Route path="/add-location" element={<AddLocationForm />} />
+        <Route path="/add-slot" element={<AddSlotForm />} />
 
       </Routes>
       <ToastContainer />

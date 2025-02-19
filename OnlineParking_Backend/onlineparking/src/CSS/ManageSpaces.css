@@ -1,0 +1,86 @@
+/* Ensure full page height */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper to ensure content pushes footer down */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Expands content to fill available space and avoid overlap */
+.main-content {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to top */
+  padding-bottom: 50px; /* Ensure space for footer */
+}
+
+/* Ensure table is properly spaced */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: auto; /* Prevent table overflow */
+}
+
+/* Prevents the table from extending beyond content */
+.parking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.parking-table th, .parking-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.parking-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Footer stays at the bottom */
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #333;
+  color: white;
+  width: 100%;
+  position: relative; /* Ensures it stays below content */
+  bottom: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 20px; /* Prevent overlap */
+}
+
+.footer {
+  margin-top: auto;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}

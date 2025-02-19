@@ -1,0 +1,91 @@
+/* AboutUs.css */
+
+.about-us {
+  font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #abb9c8;
+  padding: 60px 0;
+}
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Add hover effect for the image */
+.img-fluid {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.img-fluid:hover {
+  transform: scale(1.05); /* Slight zoom-in effect */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+
+/* Company Section */
+.company-section {
+  padding: 60px 0;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+.section-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Mission Section */
+.mission-section {
+  padding: 60px 0;
+}
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+/* Team Section */
+.team-section {
+  padding: 60px 0;
+}
+.team-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.team-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+.team-role {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 60px 0;
+  text-align: center;
+}
+.cta-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.cta-text {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}

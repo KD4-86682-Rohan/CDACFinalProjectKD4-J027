@@ -1,0 +1,95 @@
+/* Dashboard Container */
+.dashboard-container {
+  padding: 20px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+/* Title */
+.dashboard-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* Buttons */
+.dashboard-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.blue-btn {
+  background-color: #2563eb;
+  color: white;
+}
+
+.gray-btn {
+  background-color: #e5e7eb;
+  color: black;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Cards Layout */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* Individual Card */
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.number {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.blue {
+  color: #2563eb;
+}
+
+.green {
+  color: #22c55e;
+}
+
+.purple {
+  color: #9333ea;
+}
+
+.orange {
+  color: #f97316;
+}
+
+.icon {
+  font-size: 24px;
+}

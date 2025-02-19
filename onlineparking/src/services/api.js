@@ -3,7 +3,7 @@
 import axios from "axios";
 
 // Set base URL for API
-const API_URL = "http://localhost:8080"; // Replace with your backend URL
+const API_URL = "http://localhost:8081"; // Replace with your backend URL
 
 export const addParkingLocation = (vendorId, locationData) => {
   return axios.post(`${API_URL}/ParkingLocation/addLocation/${vendorId}`, locationData);

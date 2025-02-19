@@ -2,13 +2,17 @@
 
 import React, { useState } from "react";
 import { addParkingLocation } from "../services/api";
+import VendorNavbar from "../Components/VendorNavbar";
+import Footer from "../Components/Footer";
+import { useNavigate } from "react-router-dom";
 
 const AddLocationForm = ({ vendorId }) => {
   const [city, setCity] = useState("");
   const [area, setArea] = useState("");
   const [location, setLocation] = useState("");
   const [message, setMessage] = useState("");
-
+  const navigate = useNavigate();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const locationData = { city, area, location };
@@ -16,6 +20,7 @@ const AddLocationForm = ({ vendorId }) => {
     try {
       const response = await addParkingLocation(vendorId, locationData);
       setMessage(response.data.message);
+      navigate("/add-slot");
     } catch (error) {
       setMessage("Error: " + error.response.data.message);
     }
@@ -23,6 +28,7 @@ const AddLocationForm = ({ vendorId }) => {
 
   return (
     <div>
+      <VendorNavbar />
       <h2>Add New Parking Location</h2>
       <form onSubmit={handleSubmit}>
         <div>

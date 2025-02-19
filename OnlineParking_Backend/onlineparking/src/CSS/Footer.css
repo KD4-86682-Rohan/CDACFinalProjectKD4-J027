@@ -1,0 +1,114 @@
+/* General Footer Styling */
+footer {
+  background: linear-gradient(45deg, #333, #444);
+  color: #f8f8f8;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  margin-top: auto; /* Ensures footer sticks to bottom */
+}
+
+/* Wrapper for flexbox layout */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height */
+}
+
+/* Main container to push footer down */
+.main-content {
+  flex-grow: 1; /* Takes all available space */
+}
+
+/* Footer Container */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Footer Columns */
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+/* Logo and Name */
+.logo-name img {
+  max-width: 80px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.logo-name p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #ffc107;
+}
+
+/* Headings */
+.footer-column h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #ffc107;
+  letter-spacing: 1px;
+}
+
+/* Links and Social Icons */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #f8f8f8;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-column ul li a:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+/* Icons */
+.icon {
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 8px;
+  color: #ffc107;
+  vertical-align: middle;
+}
+
+/* Locations */
+.footer-column p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #f0f0f0;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #555;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+  color: #aaa;
+}

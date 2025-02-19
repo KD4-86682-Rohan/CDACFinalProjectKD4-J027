@@ -1,8 +1,6 @@
 import React from "react";
 import "../CSS/CustomerFeedback.css";
-
 import Footer from "../Components/Footer";
-
 
 const CustomerFeedback = () => {
   const feedbacks = [
@@ -34,32 +32,24 @@ const CustomerFeedback = () => {
     <div className="customer-feedback">
       <h2 className="dashboard-title">Dashboard Overview</h2>
 
-      {/* <div className="dashboard-nav">
-        <button>🅿 Manage Parking Spaces</button>
-        <button>💵 View Earnings</button>
-        <button className="active">💬 Customer Feedback</button>
-      </div>
-
-      <div className="dashboard-cards">
-        <div className="card">
-          <h3>Total Feedbacks</h3>
-          <span className="card-value">28</span>
-          <span className="card-icon">💬</span>
-        </div>
-
-        <div className="card">
-          <h3>Average Rating</h3>
-          <span className="card-value">4.5/5.0</span>
-          <span className="stars">⭐⭐⭐⭐⭐</span>
-        </div> */}
-      {/* </div> */}
-
-        </div>
-      </div>
-
-
       <div className="feedback-section">
         <h3>Recent Feedback</h3>
+        <div className="feedback-stats">
+          <div className="feedback-stat">
+            <h4>Total Feedbacks</h4>
+            <p>{feedbacks.length}</p>
+          </div>
+          <div className="feedback-stat">
+            <h4>Average Rating</h4>
+            <p>
+              {(
+                feedbacks.reduce((acc, feedback) => acc + feedback.rating, 0) /
+                feedbacks.length
+              ).toFixed(1)}
+              /5
+            </p>
+          </div>
+        </div>
         {feedbacks.map((feedback, index) => (
           <div className="feedback-card" key={index}>
             <p>
@@ -73,8 +63,7 @@ const CustomerFeedback = () => {
         <a href="#" className="view-all">View All Feedback</a>
       </div>
 
-      <Footer/>
-
+      <Footer />
     </div>
   );
 };
